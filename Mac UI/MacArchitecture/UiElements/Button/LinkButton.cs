@@ -1,12 +1,11 @@
-﻿using System;
+using System;
 using AppKit;
 using Foundation;
+using NetpeakChecker;
 
-namespace MacArchitecture.UiElements.Button {
-    //в X-code необходимо создать ImageButton
-
+namespace NetpeakSpider.Controls.SimpleControls {
     [Register(nameof(LinkButton))]
-    internal class LinkButton : BaseButton {
+	internal class LinkButton : BaseButton {
         readonly NSMutableDictionary _linkDict;
 
         public LinkButton(IntPtr handle) : base(handle) {
@@ -16,11 +15,6 @@ namespace MacArchitecture.UiElements.Button {
                 { NSStringAttributeKey.ForegroundColor, NSColor.Blue },
                 { NSStringAttributeKey.UnderlineStyle, NSNumber.FromInt32((int)NSUnderlineStyle.Single)}
             };
-        }
-
-        //SetLinkTitle
-        public void SetLinkString(string text) {
-            AttributedTitle = new NSAttributedString(text, _linkDict);
         }
 
         public override void ResetCursorRects() {
@@ -36,6 +30,21 @@ namespace MacArchitecture.UiElements.Button {
             RemoveCursorRect(Bounds, NSCursor.PointingHandCursor);
             base.MouseExited(theEvent);
         }
+
+		public void SetLinkString(string title, bool smallTitlesize = false) {
+			//AttributedTitle = new NSAttributedString(title, _linkDict);
+
+			var attrStr = new NSMutableAttributedString(title);
+			var range = new NSRange(0, attrStr.Length);
+			//attrStr.AddAttribute(NSStringAttributeKey.Link, new NSUrl("http://www.google.com/"), range);
+			attrStr.AddAttribute(NSStringAttributeKey.ForegroundColor, NSColor.Blue, range);
+			attrStr.AddAttribute(NSStringAttributeKey.UnderlineStyle, NSNumber.FromInt32((int)NSUnderlineStyle.Single), range);
+
+			if(smallTitlesize)
+				attrStr.AddAttribute(NSStringAttributeKey.Font, NSFont.SystemFontOfSize(NSFont.SmallSystemFontSize) , range);
+
+			AttributedTitle = attrStr;
+		}
 
     }
 }
