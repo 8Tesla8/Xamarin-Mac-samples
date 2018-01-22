@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacArchitecture", "MacArchitecture\MacArchitecture.csproj", "{A1AB6338-5D24-432A-906F-8D2A16964DED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1AB6338-5D24-432A-906F-8D2A16964DED}.Debug|x86.ActiveCfg = Debug|x86
+		{A1AB6338-5D24-432A-906F-8D2A16964DED}.Debug|x86.Build.0 = Debug|x86
+		{A1AB6338-5D24-432A-906F-8D2A16964DED}.Release|x86.ActiveCfg = Release|x86
+		{A1AB6338-5D24-432A-906F-8D2A16964DED}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal

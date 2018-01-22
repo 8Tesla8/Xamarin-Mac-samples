@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{A1AB6338-5D24-432A-906F-8D2A16964DED}</ProjectGuid>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MacArchitecture</RootNamespace>
+    <AssemblyName>Mac Architecture</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>true</UseSGen>
+    <UseRefCounting>true</UseRefCounting>
+    <PlatformTarget>x86</PlatformTarget>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>true</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <UseSGen>true</UseSGen>
+    <UseRefCounting>true</UseRefCounting>
+    <LinkMode>SdkOnly</LinkMode>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-128.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-128%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-16.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-16%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-256.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-256%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-32.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-32%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-512.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-512%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="UiElements\" />
+    <Folder Include="UiElements\Controller\" />
+    <Folder Include="UiElements\Controller\View\" />
+    <Folder Include="UiElements\Controller\Window\" />
+    <Folder Include="UiElements\Utils\" />
+    <Folder Include="UiElements\Button\" />
+    <Folder Include="UiElements\Menu\" />
+    <Folder Include="UiElements\Table\" />
+    <Folder Include="UiElements\Table\Ordinary\" />
+    <Folder Include="UiElements\Table\Ordinary\DataSource\" />
+    <Folder Include="UiElements\Table\Ordinary\Delegate\" />
+    <Folder Include="UiElements\TextField\" />
+    <Folder Include="UiElements\TextView\" />
+    <Folder Include="UiElements\TextView\Delegate\" />
+    <Folder Include="UiElements\Toolbar\" />
+    <Folder Include="UiElements\Table\Tree\TrTblElements\" />
+    <Folder Include="UiElements\Table\Tree\TrTblItems\" />
+    <Folder Include="UiElements\Table\Tree\TrTblItems\ForOneColumn\" />
+    <Folder Include="Examples\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="UiElements\Controller\View\BaseViewController.cs" />
+    <Compile Include="UiElements\BaseAppDelegate.cs" />
+    <Compile Include="UiElements\Notice.cs" />
+    <Compile Include="UiElements\Convention.cs" />
+    <Compile Include="UiElements\Utils\AlertModel.cs" />
+    <Compile Include="UiElements\Utils\CopyPasteHelper.cs" />
+    <Compile Include="UiElements\Utils\KeyDefinder.cs" />
+    <Compile Include="UiElements\Button\BaseButton.cs" />
+    <Compile Include="UiElements\Table\Tree\BaseTreeTable.cs" />
+    <Compile Include="UiElements\Table\Ordinary\DataSource\BaseDataSource.cs" />
+    <Compile Include="UiElements\Table\Ordinary\Delegate\BaseDelegate.cs" />
+    <Compile Include="UiElements\Menu\BaseMenu.cs" />
+    <Compile Include="UiElements\Button\DefaultButton.cs" />
+    <Compile Include="UiElements\Button\LinkButton.cs" />
+    <Compile Include="UiElements\Table\Ordinary\BaseTable.cs" />
+    <Compile Include="UiElements\TextField\TextFieldDelegate.cs" />
+    <Compile Include="UiElements\TextView\BaseTextView.cs" />
+    <Compile Include="UiElements\TextView\Delegate\UndoTextDelegate.cs" />
+    <Compile Include="UiElements\TextView\HtmlTextView.cs" />
+    <Compile Include="UiElements\Toolbar\BaseToolbarItem.cs" />
+    <Compile Include="UiElements\Menu\LocalizeMenuItem.cs" />
+    <Compile Include="UiElements\Button\StateButton.cs" />
+    <Compile Include="UiElements\Toolbar\StateToolbarItem.cs" />
+    <Compile Include="UiElements\Utils\DockTileIndicator.cs" />
+    <Compile Include="UiElements\Button\CancelButton.cs" />
+    <Compile Include="UiElements\TextView\EditableTextView.cs" />
+    <Compile Include="UiElements\Controller\Window\BaseWindowController.cs" />
+    <Compile Include="UiElements\Table\Tree\TrTblElements\BaseTreeTableDelegate.cs" />
+    <Compile Include="UiElements\Table\Tree\TrTblElements\BaseTreeTableDataSource.cs" />
+    <Compile Include="UiElements\Table\Tree\TrTblElements\SimpleTreeTableDataSource.cs" />
+    <Compile Include="UiElements\Table\Tree\TrTblItems\ITreeTableItem.cs" />
+    <Compile Include="UiElements\Table\Tree\TrTblItems\ForOneColumn\SimpleTreeTableItem.cs" />
+    <Compile Include="UiElements\Table\Tree\TrTblItems\ForOneColumn\SimpleTextFieldTreeTableItem.cs" />
+    <Compile Include="UiElements\Table\Tree\TrTblItems\ForOneColumn\SimpleCheckboxTreeTableItem.cs" />
+    <Compile Include="UiElements\Table\Tree\TrTblItems\ForOneColumn\SimpleTextViewTreeTableItem.cs" />
+    <Compile Include="UiElements\Table\TableActionKeyBehavior.cs" />
+    <Compile Include="UiElements\Table\Tree\CheckboxTreeTable.cs" />
+    <Compile Include="UiElements\Table\Tree\TrTblItems\TreeTableItem.cs" />
+    <Compile Include="UiElements\Table\Tree\TrTblItems\MultiColumnsTreeTableItem.cs" />
+    <Compile Include="ViewController.cs" />
+    <Compile Include="ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\TreeTableController.cs" />
+    <Compile Include="Examples\TreeTableController.designer.cs">
+      <DependentUpon>TreeTableController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <TextStylePolicy TabWidth="4" IndentWidth="4" RemoveTrailingWhitespace="True" NoTabsAfterNonTabs="False" EolMarker="Native" FileWidth="0" TabsToSpaces="True" scope="text/x-csharp" />
+          <CSharpFormattingPolicy IndentBlock="True" IndentBraces="False" IndentSwitchSection="True" IndentSwitchCaseSection="True" LabelPositioning="OneLess" NewLineForElse="True" NewLineForCatch="True" NewLineForFinally="True" NewLineForMembersInObjectInit="True" NewLineForMembersInAnonymousTypes="True" NewLineForClausesInQuery="True" SpacingAfterMethodDeclarationName="False" SpaceWithinMethodDeclarationParenthesis="False" SpaceBetweenEmptyMethodDeclarationParentheses="False" SpaceAfterMethodCallName="False" SpaceWithinMethodCallParentheses="False" SpaceBetweenEmptyMethodCallParentheses="False" SpaceAfterControlFlowStatementKeyword="True" SpaceWithinExpressionParentheses="False" SpaceWithinCastParentheses="False" SpaceWithinOtherParentheses="False" SpaceAfterCast="False" SpacesIgnoreAroundVariableDeclaration="False" SpaceBeforeOpenSquareBracket="False" SpaceBetweenEmptySquareBrackets="False" SpaceWithinSquareBrackets="False" SpaceAfterColonInBaseTypeDeclaration="True" SpaceAfterComma="True" SpaceAfterDot="False" SpaceAfterSemicolonsInForStatement="True" SpaceBeforeColonInBaseTypeDeclaration="True" SpaceBeforeComma="False" SpaceBeforeDot="False" SpaceBeforeSemicolonsInForStatement="False" SpacingAroundBinaryOperator="Single" WrappingPreserveSingleLine="True" WrappingKeepStatementsOnSingleLine="True" PlaceSystemDirectiveFirst="True" NewLinesForBracesInTypes="False" NewLinesForBracesInMethods="False" NewLinesForBracesInProperties="False" NewLinesForBracesInAccessors="False" NewLinesForBracesInAnonymousMethods="False" NewLinesForBracesInControlBlocks="False" NewLinesForBracesInAnonymousTypes="False" NewLinesForBracesInObjectCollectionArrayInitializers="False" NewLinesForBracesInLambdaExpressionBody="False" scope="text/x-csharp" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>
