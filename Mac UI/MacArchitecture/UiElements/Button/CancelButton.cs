@@ -13,6 +13,4 @@ namespace MacArchitecture.UiElements.Button {
             KeyEquivalent = alert.Buttons[1].KeyEquivalent;
         }
     }
-
-    //width must be 80
 }

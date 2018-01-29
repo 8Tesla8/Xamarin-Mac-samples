@@ -1,9 +1,8 @@
 using System;
 using AppKit;
 using Foundation;
-using NetpeakChecker;
 
-namespace NetpeakSpider.Controls.SimpleControls {
+namespace MacArchitecture.UiElements.Button {
     [Register(nameof(LinkButton))]
 	internal class LinkButton : BaseButton {
         readonly NSMutableDictionary _linkDict;
@@ -17,19 +16,23 @@ namespace NetpeakSpider.Controls.SimpleControls {
             };
         }
 
+
         public override void ResetCursorRects() {
             base.ResetCursorRects();
         }
+
 
         public override void MouseEntered(NSEvent theEvent) {
             AddCursorRect(Bounds, NSCursor.PointingHandCursor);
             base.MouseEntered(theEvent);
         }
 
+
         public override void MouseExited(NSEvent theEvent) {
             RemoveCursorRect(Bounds, NSCursor.PointingHandCursor);
             base.MouseExited(theEvent);
         }
+
 
 		public void SetLinkString(string title, bool smallTitlesize = false) {
 			//AttributedTitle = new NSAttributedString(title, _linkDict);

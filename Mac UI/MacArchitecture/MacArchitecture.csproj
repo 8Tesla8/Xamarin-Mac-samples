@@ -84,7 +84,10 @@
     <Folder Include="UiElements\Table\Tree\TrTblElements\" />
     <Folder Include="UiElements\Table\Tree\TrTblItems\" />
     <Folder Include="UiElements\Table\Tree\TrTblItems\ForOneColumn\" />
-    <Folder Include="Examples\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Controllers\View\" />
+    <Folder Include="Controllers\Window\" />
+    <Folder Include="UiElements\Window\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -97,7 +100,6 @@
     <Compile Include="UiElements\BaseAppDelegate.cs" />
     <Compile Include="UiElements\Notice.cs" />
     <Compile Include="UiElements\Convention.cs" />
-    <Compile Include="UiElements\Utils\AlertModel.cs" />
     <Compile Include="UiElements\Utils\CopyPasteHelper.cs" />
     <Compile Include="UiElements\Utils\KeyDefinder.cs" />
     <Compile Include="UiElements\Button\BaseButton.cs" />
@@ -132,14 +134,19 @@
     <Compile Include="UiElements\Table\Tree\CheckboxTreeTable.cs" />
     <Compile Include="UiElements\Table\Tree\TrTblItems\TreeTableItem.cs" />
     <Compile Include="UiElements\Table\Tree\TrTblItems\MultiColumnsTreeTableItem.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
+    <Compile Include="Controllers\View\MainViewController.cs" />
+    <Compile Include="Controllers\View\MainViewController.designer.cs">
+      <DependentUpon>MainViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Examples\TreeTableController.cs" />
-    <Compile Include="Examples\TreeTableController.designer.cs">
-      <DependentUpon>TreeTableController.cs</DependentUpon>
+    <Compile Include="Controllers\View\TreeTableViewController.cs" />
+    <Compile Include="Controllers\View\TreeTableViewController.designer.cs">
+      <DependentUpon>TreeTableViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\View\ButtonViewController.cs" />
+    <Compile Include="Controllers\View\ButtonViewController.designer.cs">
+      <DependentUpon>ButtonViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiElements\Window\AlertWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

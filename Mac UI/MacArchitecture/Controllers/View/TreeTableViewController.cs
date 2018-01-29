@@ -7,9 +7,9 @@ using AppKit;
 
 namespace MacArchitecture
 {
-	public partial class ViewController : NSViewController
+	public partial class TreeTableViewController : NSViewController
 	{
-		public ViewController (IntPtr handle) : base (handle)
+		public TreeTableViewController (IntPtr handle) : base (handle)
 		{
 		}
 	}

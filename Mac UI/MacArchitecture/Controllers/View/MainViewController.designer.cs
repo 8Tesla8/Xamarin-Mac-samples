@@ -9,8 +9,8 @@ using System.CodeDom.Compiler;
 
 namespace MacArchitecture
 {
-	[Register ("ViewController")]
-	partial class ViewController
+	[Register ("MainViewController")]
+	partial class MainViewController
 	{
 		
 		void ReleaseDesignerOutlets ()
