@@ -88,6 +88,7 @@
     <Folder Include="Controllers\View\" />
     <Folder Include="Controllers\Window\" />
     <Folder Include="UiElements\Window\" />
+    <Folder Include="UiElements\Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -147,6 +148,12 @@
       <DependentUpon>ButtonViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="UiElements\Window\AlertWindow.cs" />
+    <Compile Include="Controllers\View\TextFieldViewController.cs" />
+    <Compile Include="Controllers\View\TextFieldViewController.designer.cs">
+      <DependentUpon>TextFieldViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiElements\Helpers\InputValueController.cs" />
+    <Compile Include="UiElements\Helpers\BindingObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

@@ -5,12 +5,15 @@ using Foundation;
 namespace MacArchitecture.UiElements.TextField {
 
     [Register(nameof(TextFieldDelegate))]
-    internal class TextFieldDelegate : NSTextFieldDelegate {
+    public class TextFieldDelegate : NSTextFieldDelegate {
         public TextFieldDelegate(IntPtr handle) : base(handle) {
         }
 
+
+        //todo impl replace event args
         public Action EscKeyAction;
         public Action EnterKeyAction;
+       
         public Action EndEditing;
         public Action TextChanged;
 

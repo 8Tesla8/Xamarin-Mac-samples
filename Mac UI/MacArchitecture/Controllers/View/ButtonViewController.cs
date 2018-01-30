@@ -40,6 +40,7 @@ namespace MacArchitecture {
 
         public override void ViewDidAppear() {
             base.ViewDidAppear();
+
             View.Window.Title = nameof(ButtonViewController);
         }
     }

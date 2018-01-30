@@ -17,15 +17,15 @@ namespace MacArchitecture.BaseElements.Controller.Window {
         //        CancelAction();
         //}
 
-        public override void WindowDidLoad() {
-            base.WindowDidLoad();
+        //public override void WindowDidLoad() {
+        //    base.WindowDidLoad();
 
-            Window.WillClose += (sender, e) => WindowClosing();
-        }
+        //    Window.WillClose += (sender, e) => WindowClosing();
+        //}
 
-        public virtual void WindowClosing() {
-            var cntrlV = (BaseViewController)ContentViewController;
-            cntrlV.WindowClosing();
-        }
+        //public virtual void WindowClosing() {
+        //    var cntrlV = (BaseViewController)ContentViewController;
+        //    cntrlV.WindowClosing();
+        //}
     }
 }

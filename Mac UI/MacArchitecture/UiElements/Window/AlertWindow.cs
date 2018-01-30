@@ -3,28 +3,22 @@ using AppKit;
 
 namespace MacArchitecture.UiElements.Window {
     internal class AlertWindow {
-        /// <summary>
-        /// Shows the alert window with 1 choise.
-        /// </summary>
-        public bool ShowAlert(string title, string information, string okBtnText) {
 
-            NSApplication.SharedApplication.InvokeOnMainThread(() => {
-                var alert = CreateAlert(title, information, okBtnText, null);
-                alert.RunModal();
-            });
-
-            return false;
+        public bool ShowAlert(string title, string information, string okBtnText, string canselBtnText = null) {
+            return ShowWindow(NSAlertStyle.Warning, title, information, okBtnText, canselBtnText);
         }
 
 
-        /// <summary>
-        /// Shows the confirm window with 2 choises.
-        /// </summary>
-        public bool ShowAlert(string title, string information, string okBtnText, string canselBtnText) {
+        public bool ShowConfirm(string title, string information, string okBtnText, string canselBtnText = null) {
+            return ShowWindow(NSAlertStyle.Informational, title, information, okBtnText, canselBtnText);
+        }
+
+
+        public bool ShowWindow(NSAlertStyle alertStyle, string title, string information, string okBtnText, string canselBtnText = null) {
             nint result = 0;
 
             NSApplication.SharedApplication.InvokeOnMainThread(() => {
-                var alert = CreateAlert(title, information, okBtnText, canselBtnText);
+                var alert = CreateAlert(alertStyle, title, information, okBtnText, canselBtnText);
                 result = alert.RunModal();
             });
 
@@ -35,17 +29,7 @@ namespace MacArchitecture.UiElements.Window {
         }
 
 
-        public bool ShowConfirm(string title, string information, string okBtnText, string canselBtnText) {
-            return ShowAlert(title, information, okBtnText, canselBtnText);
-        }
-
-
-        private NSAlert CreateAlert(string title, string information, string okBtnText, string canselBtnText) {
-            var alertStyle = NSAlertStyle.Critical;
-
-            if (!string.IsNullOrEmpty(canselBtnText)) {
-                alertStyle = NSAlertStyle.Informational;
-            }
+        private NSAlert CreateAlert(NSAlertStyle alertStyle, string title, string information, string okBtnText, string canselBtnText) {
 
             var alert = new NSAlert() {
                 MessageText = title,
@@ -53,21 +37,16 @@ namespace MacArchitecture.UiElements.Window {
                 AlertStyle = alertStyle,
             };
 
-            switch (alertStyle) {
-                case NSAlertStyle.Critical:
-                    alert.AddButton(okBtnText);     //1000
-                    break;
+            alert.AddButton(okBtnText); //10001
 
-                case NSAlertStyle.Informational:
-                    alert.AddButton(okBtnText);     //1000
-                    alert.AddButton(canselBtnText); //1001
+            if (!string.IsNullOrEmpty(canselBtnText)) {
+                alert.AddButton(canselBtnText); //1001
 
-                    var alert1 = new NSAlert();
-                    alert1.AddButton("OK");
-                    alert1.AddButton("Cancel");
+                var alert1 = new NSAlert();
+                alert1.AddButton("OK");
+                alert1.AddButton("Cancel");
 
-                    alert.Buttons[1].KeyEquivalent = alert1.Buttons[1].KeyEquivalent;
-                    break;
+                alert.Buttons[1].KeyEquivalent = alert1.Buttons[1].KeyEquivalent;                
             }
 
             return alert;
