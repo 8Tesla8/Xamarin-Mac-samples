@@ -6,38 +6,38 @@ namespace MacArchitecture.UiElements.TextField {
 
     [Register(nameof(TextFieldDelegate))]
     public class TextFieldDelegate : NSTextFieldDelegate {
-        public TextFieldDelegate(IntPtr handle) : base(handle) {
-        }
 
-
-        //todo impl replace event args
-        public Action EscKeyAction;
-        public Action EnterKeyAction;
+        public event EventHandler PressedEscKey;
+        public event EventHandler PressedEnterKey;
        
-        public Action EndEditing;
-        public Action TextChanged;
+        public event EventHandler EndEditing;
+        public event EventHandler TextChanged;
+
 
         public override void Changed(NSNotification notification) {
-            //base.EditingEnded(notification);
-            TextChanged?.Invoke();
+            TextChanged?.Invoke(notification.Object, EventArgs.Empty);
         }
 
-        public override void EditingEnded(NSNotification notification) {
-            //base.EditingEnded(notification);
-            EndEditing?.Invoke();
-        }
 
         public override bool DoCommandBySelector(NSControl control, NSTextView textView, ObjCRuntime.Selector commandSelector) {
             if (commandSelector.Name.Equals("cancelOperation:"))      //Esc
-                EscKeyAction?.Invoke();
+                PressedEscKey?.Invoke(control, EventArgs.Empty);
+            
             else if (commandSelector.Name.Equals("insertNewline:"))   //Enter
-                EnterKeyAction?.Invoke();
+                PressedEnterKey?.Invoke(control, EventArgs.Empty);
+            
             else if (commandSelector.Name.Equals("insertLineBreak:")) //Ctrl + Enter
                 return true;
+            
             else if (commandSelector.Name.Equals("insertNewlineIgnoringFieldEditor:")) //Alt + Enter
                 return true;
 
             return false;
+        }
+
+
+        public override void EditingEnded(NSNotification notification) {
+            EndEditing?.Invoke(notification.Object, EventArgs.Empty);
         }
     }
 }

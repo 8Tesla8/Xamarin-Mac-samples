@@ -14,7 +14,7 @@ namespace MacArchitecture.UiElements {
         //создать UML диаграмму классов чтобы оценить ситуацию глобально
         //изменить название папки Utils на что-то более подходящие
 
-        //системные картинки в маке
+        //mac system images
         //http://hetima.github.io/fucking_nsimage_syntax/
 
         /*  

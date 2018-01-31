@@ -7,39 +7,45 @@ namespace MacArchitecture.UiElements.Button {
     [Register(nameof(StateButton))]
     internal class StateButton : BaseButton {
         public StateButton(IntPtr handle) : base(handle) {
-            StateTooltips = new List<string>();
             StateTitles = new List<string>();
             StateImages = new List<string>();
+            StateTooltips = new List<string>();
         }
 
         public List<string> StateTooltips { get; private set; }
         public List<string> StateTitles { get; private set; }
         public List<string> StateImages { get; private set; }
 
-        public void SetState(bool state) {
-            Enabled = state;
-
-            if (state) {
-                if (StateTitles.Count > 0)
-                    Title = StateTitles[1];
-
-                if (StateTooltips.Count > 0)
-                    ToolTip = StateTooltips[1];
-
-                if (StateImages.Count > 0)
-                    Image = new NSImage(StateImages[1]);
+        private bool _btnState;
+        public bool BtnState {
+            get {
+                return _btnState;
             }
-            else {
-                if (StateTitles.Count > 0) 
-                    Title = StateTitles[0];
-
-                if (StateTooltips.Count > 0) 
-                    ToolTip = StateTooltips[0];             
-
-                if (StateImages.Count > 0)
-                    Image = new NSImage(StateImages[0]);
+            set {
+                _btnState = value;
+                SetState(value);
             }
         }
+
+
+        public void SetState(bool state) {
+            _btnState = state;
+
+            var index = 0;
+
+            if (state)
+                index = 1;
+
+            if (StateTitles.Count > 0)
+                Title = StateTitles[index];
+
+            if (StateTooltips.Count > 0)
+                ToolTip = StateTooltips[index];
+
+            if (StateImages.Count > 0)
+                Image = NSImage.ImageNamed(StateImages[index]);
+        }
+
 
         public void SetStateTooltips(string tooltipWhenDisabled, string tooltipWhenEnabled) {
             StateTooltips.Clear();
@@ -47,13 +53,17 @@ namespace MacArchitecture.UiElements.Button {
             StateTooltips.Add(tooltipWhenDisabled);   //0
             StateTooltips.Add(tooltipWhenEnabled);    //1
         }
+
+
         public void SetStateTitles(string titleWhenDisabled, string titleWhenEnabled) {
             StateTitles.Clear();
 
             StateTitles.Add(titleWhenDisabled);  //0
             StateTitles.Add(titleWhenEnabled);   //1
         }
-        public void SetStateImages(string imageWhenDisabled, string imageWhenEnabled){
+
+
+        public void SetStateImages(string imageWhenDisabled, string imageWhenEnabled) {
             StateImages.Clear();
 
             StateImages.Add(imageWhenDisabled);     //0

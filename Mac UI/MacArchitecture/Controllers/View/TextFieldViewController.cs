@@ -3,12 +3,18 @@ using Foundation;
 using AppKit;
 using MacArchitecture.UiElements.Helpers;
 using System.Collections.Generic;
+using MacArchitecture.UiElements.TextField;
+using MacArchitecture.UiElements.Window;
 
 namespace MacArchitecture {
     public partial class TextFieldViewController : NSViewController {
         public TextFieldViewController(IntPtr handle) : base(handle) {
+            _defaultText = "NSTextField.StringValue binded to TfText property";
+            _tfText = _defaultText;
         }
 
+        private string _defaultText;
+        private AlertWindow _alertWindow = new AlertWindow();
         private TextFieldViemModel _viewModel = new TextFieldViemModel();
 
         private InputValueController _inputController;
@@ -18,14 +24,29 @@ namespace MacArchitecture {
             set { SetField(ref _inputController, value, nameof(InputController)); }
         }
 
+
+        private string _tfText;
+        [Export(nameof(TfText))]
+        public string TfText {
+            get { return _tfText; }
+            set {
+                if (string.IsNullOrEmpty(value))
+                    value = _defaultText;
+   
+                SetField(ref _tfText, value, nameof(TfText)); 
+            }
+        }
+
+
         public override void ViewDidLoad() {
             base.ViewDidLoad();
 
             #region InputValueController
 
             lbl_inputController.StringValue =
-@"I used InputValueController and bind Max Min Number and increment in slider
-min max and increment you can change dinamicly, you can input what you want but it takes only integer";
+@"Min, Max and Number are binded to InputValueController fields. InputValueController can change " +
+@"increment field in NSSteper. Min, Max and Increment can be changed dinamicly, you can input " +
+@"what you want but those NSTextFields accept only integer";
 
             InputController = new InputValueController(tf,
              (number) => _viewModel.MyProperty = number, () => _viewModel.MyProperty,
@@ -38,9 +59,9 @@ min max and increment you can change dinamicly, you can input what you want but 
             #region Formatter
 
             lbl_formatter.StringValue =
-@"In Min, Max and Increment NSTextFields accepts only integer, 
-NSNumberFormatter created programaticly";
-            
+@"Min, Max and Increment NSTextFields accepts only integer. " +
+@"NSNumberFormatter created programaticly";
+
             var numberFormatter = new NSNumberFormatter();
             numberFormatter.NumberStyle = NSNumberFormatterStyle.None;
 
@@ -51,7 +72,25 @@ NSNumberFormatter created programaticly";
             #endregion
 
             #region Delegate
-            lbl_delegate.StringValue = "";
+
+            lbl_delegate.StringValue = 
+@"For this NSTextFiled was created my own delegate, " +
+@"change text or press Esc, Enter key and you will se how it work";
+
+            var dlg = new TextFieldDelegate();
+            dlg.PressedEscKey += (sender, e) =>
+                _alertWindow.ShowAlert("Alert", "In NSTextField you pressed Esc key", "OK");
+
+            dlg.PressedEnterKey += (sender, e) =>
+                _alertWindow.ShowAlert("Alert", "In NSTextField you pressed Enter key", "OK");
+
+            dlg.TextChanged += (sender, e) => {
+                var textField = (NSTextField)sender;
+                TfText = textField.StringValue;
+            };
+
+
+            tf_delegate.Delegate = dlg;
 
             #endregion
 

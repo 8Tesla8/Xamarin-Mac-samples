@@ -41,19 +41,21 @@ namespace MacArchitecture.UiElements.Helpers {
             Increment = increment;
         }
 
+
         private double _increment;
         [Export(nameof(Increment))]
         public double Increment {
             get { return _increment; }
             set {
                 SetField(ref _increment, value, nameof(Increment));
-                //_increment = value;
+
                 if (_stp != null) {
                     _stp.Increment = value;
                     _stp.ToolTip += string.Concat("+/- ", value.ToString());
                 }
             }
         }
+
 
         private int _max;
         [Export(nameof(Max))]
@@ -62,12 +64,14 @@ namespace MacArchitecture.UiElements.Helpers {
             set { SetField(ref _max, value, nameof(Max)); }
         }
 
+
         private int _min;
         [Export(nameof(Min))]
         public int Min {
             get { return _min; }
             set { SetField(ref _min, value, nameof(Min)); }
         }
+
 
         [Export(nameof(Number))]
         public int Number {
