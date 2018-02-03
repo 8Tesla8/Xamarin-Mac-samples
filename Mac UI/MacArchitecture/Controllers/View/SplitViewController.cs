@@ -8,88 +8,42 @@ namespace MacArchitecture {
         public SplitViewController(IntPtr handle) : base(handle) {
         }
 
+
         private string _rightPanel = " right panel";
         private string _bottomPanel = " bottom panel";
         private string _hide = "Hide";
         private string _show = "Show";
 
 
-        private bool _bottomPanelIsHiden;
-        private bool BottomPanelIsHiden {
-            get {
-                return _bottomPanelIsHiden;
-            }
-            set {
-                if (value)
-                    btn_vertical.Title = _show + _bottomPanel;
-                else
-                    btn_vertical.Title = _hide + _bottomPanel;
-
-                _bottomPanelIsHiden = value;
-            }
-        }
-
-        private bool _rightPanelIsHiden;
-        private bool RightPanelIsHiden {
-            get {
-                return _rightPanelIsHiden;
-            }
-            set {
-                if (value)
-                    btn_horizontal.Title = _show + _rightPanel;
-                else
-                    btn_horizontal.Title = _hide + _rightPanel;
-
-                _rightPanelIsHiden = value;
-            }
-        }
-
-
         public override void ViewDidLoad() {
             base.ViewDidLoad();
 
-            var vertDlg = new SplitViewDelegate();
-            vertDlg.DidResizeView += (sender, e) => {
-                var bottomPanel = splv_vertical.Subviews[1];
+            splv_horizontal.MonitoringIndexSubview = 0;
+            splv_horizontal.MinMonitoringSubviewWidth = 100;
+            splv_horizontal.HiddenSubviewIsChanged += (sender, e) => {
+                var splv = (SplitView)sender;
 
-                if (BottomPanelIsHiden != bottomPanel.Hidden)
-                    BottomPanelIsHiden = bottomPanel.Hidden;
-
-                if (bottomPanel.Frame.Height < 100) {
-                    BottomPanelIsHiden = true;
-                    bottomPanel.Hidden = true;
-                }
-            };
-            splv_vertical.Delegate = vertDlg;
-
-            var horzDlg = new SplitViewDelegate();
-            horzDlg.DidResizeView += (sender, e) => {
-                var rightPanel = splv_horizontal.Subviews[0];
-
-                if (RightPanelIsHiden != rightPanel.Hidden)
-                    RightPanelIsHiden = rightPanel.Hidden;
-
-                if (rightPanel.Frame.Width < 100) {
-                    RightPanelIsHiden = true;
-                    rightPanel.Hidden = true;
-                }
-            };
-            splv_horizontal.Delegate = horzDlg;
-
-
-            btn_vertical.Activated += (sender, e) => {
-                var bottomPanel = splv_vertical.Subviews[1];
-
-                BottomPanelIsHiden = !BottomPanelIsHiden;
-                bottomPanel.Hidden = BottomPanelIsHiden;
-            };
-            btn_horizontal.Activated += (sender, e) => {
-                var rightPanel = splv_horizontal.Subviews[0];
-
-                RightPanelIsHiden = !RightPanelIsHiden;
-                rightPanel.Hidden = RightPanelIsHiden;
+                if (splv.MonitoringSubviewHidden)
+                    btn_horizontal.Title = _show + _rightPanel;
+                else
+                    btn_horizontal.Title = _hide + _rightPanel;
             };
 
+            splv_vertical.MonitoringIndexSubview = 1;
+            splv_vertical.MinMonitoringSubviewHeight = 100;
+            splv_vertical.HiddenSubviewIsChanged += (sender, e) => {
+                var splv = (SplitView)sender;
+
+                if (splv.MonitoringSubviewHidden)
+                    btn_vertical.Title = _show + _bottomPanel;
+                else
+                    btn_vertical.Title = _hide + _bottomPanel;
+            };
+
+            btn_vertical.Activated += (sender, e) => 
+                splv_vertical.MonitoringSubviewHidden = !splv_vertical.MonitoringSubviewHidden;
+            btn_horizontal.Activated += (sender, e) => 
+                splv_horizontal.MonitoringSubviewHidden = !splv_horizontal.MonitoringSubviewHidden;
 
             btn_vertical.Title = _hide + _bottomPanel;
             btn_horizontal.Title = _hide + _rightPanel;

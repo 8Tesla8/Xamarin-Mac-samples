@@ -5,7 +5,7 @@ namespace MacArchitecture {
 	static class MainClass {
 		static void Main(string[] args) {
 
-            ErrorCatcher.InitCathcer();
+            //ErrorCatcher.InitCathcer();
 
 			NSApplication.Init();
 			NSApplication.Main(args);

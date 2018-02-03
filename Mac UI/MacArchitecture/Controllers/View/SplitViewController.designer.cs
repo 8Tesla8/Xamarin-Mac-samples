@@ -19,23 +19,13 @@ namespace MacArchitecture
 		AppKit.NSButton btn_vertical { get; set; }
 
 		[Outlet]
-		AppKit.NSSplitView splv_horizontal { get; set; }
+		MacArchitecture.UiElements.SplitView.SplitView splv_horizontal { get; set; }
 
 		[Outlet]
-		AppKit.NSSplitView splv_vertical { get; set; }
+		MacArchitecture.UiElements.SplitView.SplitView splv_vertical { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (splv_horizontal != null) {
-				splv_horizontal.Dispose ();
-				splv_horizontal = null;
-			}
-
-			if (splv_vertical != null) {
-				splv_vertical.Dispose ();
-				splv_vertical = null;
-			}
-
 			if (btn_horizontal != null) {
 				btn_horizontal.Dispose ();
 				btn_horizontal = null;
@@ -44,6 +34,16 @@ namespace MacArchitecture
 			if (btn_vertical != null) {
 				btn_vertical.Dispose ();
 				btn_vertical = null;
+			}
+
+			if (splv_horizontal != null) {
+				splv_horizontal.Dispose ();
+				splv_horizontal = null;
+			}
+
+			if (splv_vertical != null) {
+				splv_vertical.Dispose ();
+				splv_vertical = null;
 			}
 		}
 	}
