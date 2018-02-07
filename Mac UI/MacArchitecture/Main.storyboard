@@ -651,7 +651,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -741,6 +741,17 @@
                                 </buttonCell>
                                 <connections>
                                     <segue destination="rdd-Gs-AC8" kind="show" id="Vqv-AA-MMJ"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JWP-Tg-x6v">
+                                <rect key="frame" x="16" y="73" width="110" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Notification" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xEN-WP-Yod">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="vKn-gQ-jaO" kind="show" id="Jxm-kH-V9B"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1311,6 +1322,116 @@
                 <customObject id="ndx-IP-dos" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2753" y="1765"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="aAq-qT-8gJ">
+            <objects>
+                <windowController showSeguePresentationStyle="single" id="vKn-gQ-jaO" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="7Q7-NL-bm2">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="310" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
+                        <connections>
+                            <outlet property="delegate" destination="vKn-gQ-jaO" id="dva-X9-kvP"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="DOg-BD-Ncm" kind="relationship" relationship="window.shadowedContentViewController" id="qz7-ww-DOy"/>
+                    </connections>
+                </windowController>
+                <customObject id="l6R-gg-zHT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3507" y="1233"/>
+        </scene>
+        <!--Notification View Controller-->
+        <scene sceneID="UVv-Nd-PKC">
+            <objects>
+                <viewController id="DOg-BD-Ncm" customClass="NotificationViewController" sceneMemberID="viewController">
+                    <view key="view" id="OWR-xx-uf1">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="237"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jVq-Gc-2M2">
+                                <rect key="frame" x="14" y="116" width="88" height="32"/>
+                                <buttonCell key="cell" type="push" title="Buttons" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Q63-iG-63G">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="iAX-M9-5QN">
+                                <rect key="frame" x="18" y="200" width="444" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="440" id="gd4-O4-JAk"/>
+                                </constraints>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Multiline Label" id="Oug-iX-kGj">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fKn-EA-nwm">
+                                <rect key="frame" x="14" y="152" width="88" height="32"/>
+                                <buttonCell key="cell" type="push" title="Simple" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3JK-6j-c8j">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OjG-hm-epA">
+                                <rect key="frame" x="14" y="80" width="88" height="32"/>
+                                <buttonCell key="cell" type="push" title="Reply" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="S8c-Ek-cEY">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dH8-Sl-0ft">
+                                <rect key="frame" x="14" y="44" width="88" height="32"/>
+                                <buttonCell key="cell" type="push" title="Timer" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RLd-dP-hWz">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mS3-eE-1Or">
+                                <rect key="frame" x="14" y="8" width="88" height="32"/>
+                                <buttonCell key="cell" type="push" title="Banner" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oKw-y8-V7e">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="jVq-Gc-2M2" firstAttribute="leading" secondItem="fKn-EA-nwm" secondAttribute="leading" id="2xS-Vk-qDC"/>
+                            <constraint firstItem="OjG-hm-epA" firstAttribute="top" secondItem="jVq-Gc-2M2" secondAttribute="bottom" constant="15" id="3wz-cK-X2V"/>
+                            <constraint firstItem="jVq-Gc-2M2" firstAttribute="trailing" secondItem="fKn-EA-nwm" secondAttribute="trailing" id="4of-KX-O3a"/>
+                            <constraint firstItem="dH8-Sl-0ft" firstAttribute="trailing" secondItem="fKn-EA-nwm" secondAttribute="trailing" id="HFs-bl-W43"/>
+                            <constraint firstItem="mS3-eE-1Or" firstAttribute="leading" secondItem="fKn-EA-nwm" secondAttribute="leading" id="RzU-fx-Dzj"/>
+                            <constraint firstItem="OjG-hm-epA" firstAttribute="trailing" secondItem="fKn-EA-nwm" secondAttribute="trailing" id="YVi-rf-FLa"/>
+                            <constraint firstItem="iAX-M9-5QN" firstAttribute="leading" secondItem="OWR-xx-uf1" secondAttribute="leading" constant="20" id="fHA-RD-bjQ"/>
+                            <constraint firstItem="mS3-eE-1Or" firstAttribute="top" secondItem="dH8-Sl-0ft" secondAttribute="bottom" constant="15" id="hBQ-ff-pYw"/>
+                            <constraint firstItem="OjG-hm-epA" firstAttribute="leading" secondItem="fKn-EA-nwm" secondAttribute="leading" id="lG8-xJ-w88"/>
+                            <constraint firstItem="fKn-EA-nwm" firstAttribute="leading" secondItem="iAX-M9-5QN" secondAttribute="leading" id="pcu-cg-w4C"/>
+                            <constraint firstItem="fKn-EA-nwm" firstAttribute="top" secondItem="iAX-M9-5QN" secondAttribute="bottom" constant="20" id="pfx-NA-ZAB"/>
+                            <constraint firstAttribute="trailing" secondItem="iAX-M9-5QN" secondAttribute="trailing" constant="20" id="sai-f4-cJS"/>
+                            <constraint firstItem="dH8-Sl-0ft" firstAttribute="top" secondItem="OjG-hm-epA" secondAttribute="bottom" constant="15" id="szO-Iv-Jqa"/>
+                            <constraint firstItem="iAX-M9-5QN" firstAttribute="top" secondItem="OWR-xx-uf1" secondAttribute="top" constant="20" id="vfi-BZ-Oc9"/>
+                            <constraint firstItem="dH8-Sl-0ft" firstAttribute="leading" secondItem="fKn-EA-nwm" secondAttribute="leading" id="vxd-Ib-0yg"/>
+                            <constraint firstItem="jVq-Gc-2M2" firstAttribute="top" secondItem="fKn-EA-nwm" secondAttribute="bottom" constant="15" id="wtl-yB-gqz"/>
+                            <constraint firstAttribute="bottom" secondItem="mS3-eE-1Or" secondAttribute="bottom" constant="15" id="x7r-Ak-tng"/>
+                            <constraint firstItem="mS3-eE-1Or" firstAttribute="trailing" secondItem="fKn-EA-nwm" secondAttribute="trailing" id="ziN-Fr-A3P"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btn_banner" destination="mS3-eE-1Or" id="jrm-Ci-agc"/>
+                        <outlet property="btn_reply" destination="OjG-hm-epA" id="hgy-eT-2Ey"/>
+                        <outlet property="btn_simple" destination="fKn-EA-nwm" id="Qfn-MZ-cvW"/>
+                        <outlet property="btn_timer" destination="dH8-Sl-0ft" id="sUd-Ad-6Wa"/>
+                        <outlet property="btn_withButtons" destination="jVq-Gc-2M2" id="dV1-UL-p0z"/>
+                        <outlet property="lbl_info" destination="iAX-M9-5QN" id="eCX-fV-NnX"/>
+                    </connections>
+                </viewController>
+                <customObject id="xWU-NF-i0y" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3507" y="1710"/>
         </scene>
         <!--Exception View Controller-->
         <scene sceneID="e13-Ne-lne">
