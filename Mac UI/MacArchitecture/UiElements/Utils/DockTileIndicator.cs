@@ -2,9 +2,10 @@
 using AppKit;
 
 namespace MacArchitecture.UiElements.Utils {
-    internal static class DockTileIndicator {
+    public static class DockTileIndicator {
 
         private static readonly NSDockTile _dockTile;
+
 
         static DockTileIndicator() {
             _dockTile = NSApplication.SharedApplication.DockTile;
@@ -13,19 +14,7 @@ namespace MacArchitecture.UiElements.Utils {
             //NSApplication.SharedApplication.ApplicationDockMenu
         }
 
-        private static bool _crawlingStarted;
-        public static bool CrawlingStarted {
-            get {
-                return _crawlingStarted;
-            }
-            set {
-                //if (!value)
-                //_dockTile.BadgeLabel = null;
-
-                _crawlingStarted = value;
-            }
-        }
-
+ 
         //show indicator should use in AppDelegate
         //public override void DidBecomeActive(NSNotification notification) {
         //    DockTileIndicator.ShowIndicator = false;
@@ -34,13 +23,14 @@ namespace MacArchitecture.UiElements.Utils {
         //    DockTileIndicator.ShowIndicator = true;
         //}
 
+
         private static bool _showIndicator;
         public static bool ShowIndicator {
             get {
                 return _showIndicator;
             }
             set {
-                if (value && CrawlingStarted)
+                if (value)
                     _dockTile.BadgeLabel = _prevBadgeText;
                 else
                     _dockTile.BadgeLabel = null;
@@ -49,16 +39,17 @@ namespace MacArchitecture.UiElements.Utils {
             }
         }
 
+
         private static string _prevBadgeText;
         public static void SetText(string badgeText) {
             _prevBadgeText = badgeText;
 
-            if (CrawlingStarted && ShowIndicator)
+            if (ShowIndicator)
                 _dockTile.BadgeLabel = badgeText;
             else
                 _dockTile.BadgeLabel = null;
 
-            var view = _dockTile.ContentView;
+            //var view = _dockTile.ContentView;
         }
     }
 }

@@ -679,28 +679,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rJq-zV-fY5">
-                                <rect key="frame" x="14" y="181" width="120" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="TreeTable" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="P7p-cu-sam">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="N2y-2w-TTs" kind="show" id="FE3-8n-zaK"/>
-                                </connections>
-                            </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCt-Tz-mLj">
-                                <rect key="frame" x="20" y="233" width="37" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="MainViewController" id="cJ5-K6-m1c">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L2y-Hl-2da">
-                                <rect key="frame" x="145" y="181" width="145" height="32"/>
+                                <rect key="frame" x="14" y="230" width="145" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Defferent Buttons " bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="s3a-Pq-Xf1">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -711,7 +691,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="53S-Or-vaJ">
-                                <rect key="frame" x="313" y="181" width="81" height="32"/>
+                                <rect key="frame" x="182" y="230" width="81" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="TextFields" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HLD-P5-B82">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -721,19 +701,8 @@
                                     <segue destination="WFq-BI-ti2" kind="show" id="bXa-D9-DmU"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wuu-Zt-t1f">
-                                <rect key="frame" x="255" y="130" width="162" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Exception catcher" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0pT-sY-wuy">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="JMt-Tw-Od2" kind="show" id="yyP-g9-TT1"/>
-                                </connections>
-                            </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LC3-bB-W2E">
-                                <rect key="frame" x="16" y="117" width="112" height="32"/>
+                                <rect key="frame" x="16" y="191" width="112" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="SplitView" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GDd-mN-mwd">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -744,7 +713,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JWP-Tg-x6v">
-                                <rect key="frame" x="16" y="73" width="110" height="32"/>
+                                <rect key="frame" x="14" y="150" width="110" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Notification" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xEN-WP-Yod">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -752,6 +721,39 @@
                                 </buttonCell>
                                 <connections>
                                     <segue destination="vKn-gQ-jaO" kind="show" id="Jxm-kH-V9B"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rJq-zV-fY5">
+                                <rect key="frame" x="240" y="35" width="120" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="TreeTable" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="P7p-cu-sam">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="N2y-2w-TTs" kind="show" id="FE3-8n-zaK"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wKV-NI-QjB">
+                                <rect key="frame" x="134" y="150" width="81" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Badge" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DZL-B9-jdJ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="nsM-Jw-qfL" kind="show" id="wu0-pT-A0K"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wuu-Zt-t1f">
+                                <rect key="frame" x="304" y="150" width="109" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Exception" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0pT-sY-wuy">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="JMt-Tw-Od2" kind="show" id="yyP-g9-TT1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1892,6 +1894,81 @@
                 <customObject id="NMq-Qs-FI9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="82" y="1794"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="4fO-lU-Z4s">
+            <objects>
+                <windowController showSeguePresentationStyle="single" id="nsM-Jw-qfL" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="PMf-Dj-zsU">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="310" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
+                        <connections>
+                            <outlet property="delegate" destination="nsM-Jw-qfL" id="SGm-sE-47p"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="rq1-4N-Xih" kind="relationship" relationship="window.shadowedContentViewController" id="NOH-7n-12r"/>
+                    </connections>
+                </windowController>
+                <customObject id="0Z8-ph-JFO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23" y="2261"/>
+        </scene>
+        <!--Badge View Controller-->
+        <scene sceneID="e0U-4p-zFh">
+            <objects>
+                <viewController id="rq1-4N-Xih" customClass="BadgeViewController" sceneMemberID="viewController">
+                    <view key="view" id="56i-qo-LUv">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QB5-ad-mpo">
+                                <rect key="frame" x="18" y="227" width="97" height="25"/>
+                                <buttonCell key="cell" type="check" title="Show badge" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="sCv-uD-CT4">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LDa-Xo-2cO">
+                                <rect key="frame" x="137" y="222" width="106" height="32"/>
+                                <buttonCell key="cell" type="push" title="Add badge" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IAw-mY-IMN">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eAl-1I-5sJ">
+                                <rect key="frame" x="251" y="222" width="114" height="32"/>
+                                <buttonCell key="cell" type="push" title="Clear badge" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7dc-Fb-QET">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="QB5-ad-mpo" firstAttribute="leading" secondItem="56i-qo-LUv" secondAttribute="leading" constant="20" id="110-WG-ndh"/>
+                            <constraint firstItem="QB5-ad-mpo" firstAttribute="top" secondItem="56i-qo-LUv" secondAttribute="top" constant="20" id="9ru-o6-Qpz"/>
+                            <constraint firstItem="LDa-Xo-2cO" firstAttribute="centerY" secondItem="QB5-ad-mpo" secondAttribute="centerY" id="Csh-Og-8Ul"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eAl-1I-5sJ" secondAttribute="trailing" constant="20" id="Eeo-NQ-bcz"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QB5-ad-mpo" secondAttribute="bottom" constant="20" id="OMD-C4-JGD"/>
+                            <constraint firstItem="eAl-1I-5sJ" firstAttribute="top" secondItem="QB5-ad-mpo" secondAttribute="top" id="U1q-Dw-zew"/>
+                            <constraint firstItem="LDa-Xo-2cO" firstAttribute="leading" secondItem="QB5-ad-mpo" secondAttribute="trailing" constant="30" id="YZF-1B-E0u"/>
+                            <constraint firstItem="LDa-Xo-2cO" firstAttribute="top" secondItem="QB5-ad-mpo" secondAttribute="top" id="ap4-sX-NEj"/>
+                            <constraint firstItem="eAl-1I-5sJ" firstAttribute="centerY" secondItem="QB5-ad-mpo" secondAttribute="centerY" id="ozs-Oy-LdJ"/>
+                            <constraint firstItem="eAl-1I-5sJ" firstAttribute="leading" secondItem="LDa-Xo-2cO" secondAttribute="trailing" constant="20" id="r5o-F1-vZW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnC_badge" destination="QB5-ad-mpo" id="6qd-MF-PiO"/>
+                        <outlet property="btn_addBadge" destination="LDa-Xo-2cO" id="PcB-gr-Osx"/>
+                        <outlet property="btn_clear" destination="eAl-1I-5sJ" id="fCa-hs-RLo"/>
+                        <outlet property="ckb_showBadge" destination="QB5-ad-mpo" id="yp0-hR-xqh"/>
+                    </connections>
+                </viewController>
+                <customObject id="MPT-Yu-Vud" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23" y="2718"/>
         </scene>
     </scenes>
     <resources>

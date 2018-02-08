@@ -18,7 +18,7 @@ namespace MacArchitecture.UiElements.Notification {
             
             var notification = CreateNotification(title, subtitle, text);
             notification.HasActionButton = true;
-            notification.ActionButtonTitle = bottomBtnTitle;     //bottom button
+            notification.ActionButtonTitle = bottomBtnTitle;     
 
             var actionList = new List<NSUserNotificationAction>();
 
@@ -92,8 +92,8 @@ namespace MacArchitecture.UiElements.Notification {
             var notification = CreateNotification(title, subtitle, text);
 
             notification.HasActionButton = hasButtons;
-            notification.OtherButtonTitle = topBtnTitle;         //top button
-            notification.ActionButtonTitle = bottomBtnTitle;     //bottom button
+            notification.OtherButtonTitle = topBtnTitle;         
+            notification.ActionButtonTitle = bottomBtnTitle;     
 
             var defaultNotiCenter = CreateNotificationCentre();
             defaultNotiCenter.DidActivateNotification += (sender, e) => {

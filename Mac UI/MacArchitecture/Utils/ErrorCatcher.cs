@@ -7,6 +7,7 @@ using ObjCRuntime;
 namespace MacArchitecture.Utils {
     public static class ErrorCatcher {
 
+        public static event Action<string> ErrorAction;
 
         //in Main.cs run this function 
         public static void InitCathcer(){
@@ -19,39 +20,20 @@ namespace MacArchitecture.Utils {
         }
 
 
-
         public static void CurrentDomainUnhandledException(object sender, UnhandledExceptionEventArgs e) {
             Error(e.ExceptionObject as Exception);
         }
 
 
         public static void Error(NSException exception) {
-            if (exception != null) {
-
-                var alert = new NSAlert() {
-                    MessageText = "NSException",
-                    InformativeText = exception.ToString(),
-                    AlertStyle = NSAlertStyle.Critical,
-                };
-
-                alert.RunModal();
-
-            }
+            if (exception != null) 
+                ErrorAction?.Invoke(exception.ToString());
         }
 
 
         public static void Error(Exception exception) {
-            if (exception != null) {
-
-                var alert = new NSAlert() {
-                    MessageText = "C# Exception",
-                    InformativeText = exception.ToString(),
-                    AlertStyle = NSAlertStyle.Critical,
-                };
-
-                alert.RunModal();
-
-            }
+            if (exception != null) 
+                ErrorAction?.Invoke(exception.ToString());
         }
     }
 }

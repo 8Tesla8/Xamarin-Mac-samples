@@ -1,6 +1,7 @@
 using System;
 using Foundation;
 using AppKit;
+using MacArchitecture.Utils;
 
 namespace MacArchitecture {
     public partial class ExceptionViewController : NSViewController {
@@ -11,7 +12,18 @@ namespace MacArchitecture {
         public override void ViewDidLoad() {
             base.ViewDidLoad();
 
-            //go to the ErrorCatcher
+            //in your app you should run this func in  Main.cs
+            ErrorCatcher.InitCathcer();
+
+            ErrorCatcher.ErrorAction += (error) => {
+                var alert = new NSAlert() {
+                    MessageText = "Exception",
+                    InformativeText = error,
+                    AlertStyle = NSAlertStyle.Critical,
+                };
+
+                alert.RunModal();
+            };
 
             btn_exception.Activated += (sender, e) => {
                 throw new System.Exception("Test Exception");
@@ -23,7 +35,6 @@ namespace MacArchitecture {
             };
         }
 
-        public void Hand(IntPtr tt){}
 
         public override void ViewDidAppear() {
             base.ViewDidAppear();
