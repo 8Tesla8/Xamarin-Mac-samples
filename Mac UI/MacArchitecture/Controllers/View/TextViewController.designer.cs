@@ -13,6 +13,15 @@ namespace MacArchitecture
 	partial class TextViewController
 	{
 		[Outlet]
+		AppKit.NSButton btn_clear { get; set; }
+
+		[Outlet]
+		AppKit.NSButton btn_hide { get; set; }
+
+		[Outlet]
+		AppKit.NSButton btn_show { get; set; }
+
+		[Outlet]
 		MacArchitecture.UiElements.TextView.BaseTextView txtv_base { get; set; }
 
 		[Outlet]
@@ -36,6 +45,21 @@ namespace MacArchitecture
 			if (txtv_editable != null) {
 				txtv_editable.Dispose ();
 				txtv_editable = null;
+			}
+
+			if (btn_clear != null) {
+				btn_clear.Dispose ();
+				btn_clear = null;
+			}
+
+			if (btn_show != null) {
+				btn_show.Dispose ();
+				btn_show = null;
+			}
+
+			if (btn_hide != null) {
+				btn_hide.Dispose ();
+				btn_hide = null;
 			}
 		}
 	}

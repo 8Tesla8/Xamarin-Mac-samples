@@ -5,7 +5,7 @@ using MacArchitecture.UiElements.TextView.Delagate;
 
 namespace MacArchitecture.UiElements.TextView {
     [Register(nameof(EditableTextView))]
-    internal class EditableTextView : BaseTextView {
+    public class EditableTextView : BaseTextView {
         private TextViewDelegate _textViewDelegate;
 
         public EditableTextView(IntPtr handle) : base(handle) {

@@ -3,7 +3,7 @@ using Foundation;
 
 namespace MacArchitecture.UiElements.TextView {
     [Register(nameof(HtmlTextView))]
-    internal class HtmlTextView : BaseTextView {
+    public class HtmlTextView : BaseTextView {
         public HtmlTextView(IntPtr handle) : base(handle) {
             DisplaysLinkToolTips = false;
         }

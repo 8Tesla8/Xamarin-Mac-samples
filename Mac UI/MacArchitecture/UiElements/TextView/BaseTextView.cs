@@ -4,7 +4,7 @@ using Foundation;
 
 namespace MacArchitecture.UiElements.TextView {
     [Register(nameof(BaseTextView))]
-    internal class BaseTextView : NSTextView {
+    public class BaseTextView : NSTextView {
         public BaseTextView(IntPtr handle) : base(handle) {
 
             //leave only Cut Copy Paste

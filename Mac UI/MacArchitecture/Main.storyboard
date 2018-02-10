@@ -1977,9 +1977,15 @@
                         <subviews>
                             <box horizontalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="20I-tx-diO">
                                 <rect key="frame" x="252" y="173" width="5" height="152"/>
+                                <connections>
+                                    <binding destination="6qK-m0-giz" name="hidden" keyPath="self.ReturnTrue" id="Nnt-gl-08R"/>
+                                </connections>
                             </box>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="lih-3V-uup">
                                 <rect key="frame" x="20" y="170" width="469" height="5"/>
+                                <connections>
+                                    <binding destination="6qK-m0-giz" name="hidden" keyPath="self.ReturnTrue" id="PnF-XB-Guo"/>
+                                </connections>
                             </box>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuL-rS-zL2">
                                 <rect key="frame" x="20" y="183" width="224" height="120"/>
@@ -2047,7 +2053,7 @@
                                     <rect key="frame" x="1" y="1" width="377" height="118"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="NK6-ox-f2Q" customClass="EditableTextView">
+                                        <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="bar" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="NK6-ox-f2Q" customClass="EditableTextView">
                                             <rect key="frame" x="0.0" y="0.0" width="377" height="118"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2171,6 +2177,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btn_clear" destination="fIG-as-t5m" id="Sie-3q-jjs"/>
+                        <outlet property="btn_hide" destination="Gdm-je-nTi" id="hZS-r0-1Yw"/>
+                        <outlet property="btn_show" destination="egv-1Z-xOl" id="1ga-A1-8aX"/>
                         <outlet property="txtv_base" destination="gBZ-25-MFo" id="C4i-Am-sjY"/>
                         <outlet property="txtv_editable" destination="NK6-ox-f2Q" id="8u6-qb-CUq"/>
                         <outlet property="txtv_html" destination="8aw-Hv-Nlc" id="PbU-Oh-STh"/>
