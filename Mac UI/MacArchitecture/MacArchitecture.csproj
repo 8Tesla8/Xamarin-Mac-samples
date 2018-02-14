@@ -75,8 +75,6 @@
     <Folder Include="UiElements\Menu\" />
     <Folder Include="UiElements\Table\" />
     <Folder Include="UiElements\Table\Ordinary\" />
-    <Folder Include="UiElements\Table\Ordinary\DataSource\" />
-    <Folder Include="UiElements\Table\Ordinary\Delegate\" />
     <Folder Include="UiElements\TextField\" />
     <Folder Include="UiElements\TextView\" />
     <Folder Include="UiElements\TextView\Delegate\" />
@@ -92,6 +90,9 @@
     <Folder Include="Utils\" />
     <Folder Include="UiElements\SplitView\" />
     <Folder Include="UiElements\Notification\" />
+    <Folder Include="UiElements\Table\ViewFactory\" />
+    <Folder Include="UiElements\Table\Ordinary\TableElements\" />
+    <Folder Include="Documentation\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -102,14 +103,10 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="UiElements\Controller\View\BaseViewController.cs" />
     <Compile Include="UiElements\BaseAppDelegate.cs" />
-    <Compile Include="UiElements\Notice.cs" />
-    <Compile Include="UiElements\Convention.cs" />
     <Compile Include="UiElements\Utils\CopyPasteHelper.cs" />
     <Compile Include="UiElements\Utils\KeyDefinder.cs" />
     <Compile Include="UiElements\Button\BaseButton.cs" />
     <Compile Include="UiElements\Table\Tree\BaseTreeTable.cs" />
-    <Compile Include="UiElements\Table\Ordinary\DataSource\BaseDataSource.cs" />
-    <Compile Include="UiElements\Table\Ordinary\Delegate\BaseDelegate.cs" />
     <Compile Include="UiElements\Menu\BaseMenu.cs" />
     <Compile Include="UiElements\Button\DefaultButton.cs" />
     <Compile Include="UiElements\Button\LinkButton.cs" />
@@ -181,6 +178,19 @@
     <Compile Include="Controllers\View\TextViewController.designer.cs">
       <DependentUpon>TextViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="UiElements\Table\ViewFactory\IViewFactory.cs" />
+    <Compile Include="UiElements\Table\Ordinary\TableElements\BaseDelegate.cs" />
+    <Compile Include="UiElements\Table\Ordinary\TableElements\BaseDataSource.cs" />
+    <Compile Include="UiElements\Table\Ordinary\BaseOrdinaryTable.cs" />
+    <Compile Include="UiElements\Table\Ordinary\TableItem.cs" />
+    <Compile Include="UiElements\Table\ViewFactory\ViewFactory.cs" />
+    <Compile Include="UiElements\Table\Constants.cs" />
+    <Compile Include="Documentation\Convention.cs" />
+    <Compile Include="Documentation\Notice.cs" />
+    <Compile Include="Controllers\View\OrdinaryTableViewController.cs" />
+    <Compile Include="Controllers\View\OrdinaryTableViewController.designer.cs">
+      <DependentUpon>OrdinaryTableViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
@@ -191,7 +201,7 @@
       <Properties>
         <Policies>
           <TextStylePolicy TabWidth="4" IndentWidth="4" RemoveTrailingWhitespace="True" NoTabsAfterNonTabs="False" EolMarker="Native" FileWidth="0" TabsToSpaces="True" scope="text/x-csharp" />
-          <CSharpFormattingPolicy IndentBlock="True" IndentBraces="False" IndentSwitchSection="True" IndentSwitchCaseSection="True" LabelPositioning="OneLess" NewLineForElse="True" NewLineForCatch="True" NewLineForFinally="True" NewLineForMembersInObjectInit="True" NewLineForMembersInAnonymousTypes="True" NewLineForClausesInQuery="True" SpacingAfterMethodDeclarationName="False" SpaceWithinMethodDeclarationParenthesis="False" SpaceBetweenEmptyMethodDeclarationParentheses="False" SpaceAfterMethodCallName="False" SpaceWithinMethodCallParentheses="False" SpaceBetweenEmptyMethodCallParentheses="False" SpaceAfterControlFlowStatementKeyword="True" SpaceWithinExpressionParentheses="False" SpaceWithinCastParentheses="False" SpaceWithinOtherParentheses="False" SpaceAfterCast="False" SpacesIgnoreAroundVariableDeclaration="False" SpaceBeforeOpenSquareBracket="False" SpaceBetweenEmptySquareBrackets="False" SpaceWithinSquareBrackets="False" SpaceAfterColonInBaseTypeDeclaration="True" SpaceAfterComma="True" SpaceAfterDot="False" SpaceAfterSemicolonsInForStatement="True" SpaceBeforeColonInBaseTypeDeclaration="True" SpaceBeforeComma="False" SpaceBeforeDot="False" SpaceBeforeSemicolonsInForStatement="False" SpacingAroundBinaryOperator="Single" WrappingPreserveSingleLine="True" WrappingKeepStatementsOnSingleLine="True" PlaceSystemDirectiveFirst="True" NewLinesForBracesInTypes="False" NewLinesForBracesInMethods="False" NewLinesForBracesInProperties="False" NewLinesForBracesInAccessors="False" NewLinesForBracesInAnonymousMethods="False" NewLinesForBracesInControlBlocks="False" NewLinesForBracesInAnonymousTypes="False" NewLinesForBracesInObjectCollectionArrayInitializers="False" NewLinesForBracesInLambdaExpressionBody="False" scope="text/x-csharp" />
+          <CSharpFormattingPolicy IndentBlock="True" IndentBraces="False" IndentSwitchSection="True" IndentSwitchCaseSection="True" LabelPositioning="OneLess" NewLinesForBracesInTypes="False" NewLinesForBracesInMethods="False" NewLinesForBracesInProperties="False" NewLinesForBracesInAccessors="False" NewLinesForBracesInAnonymousMethods="False" NewLinesForBracesInControlBlocks="False" NewLinesForBracesInAnonymousTypes="False" NewLinesForBracesInObjectCollectionArrayInitializers="False" NewLinesForBracesInLambdaExpressionBody="False" NewLineForElse="True" NewLineForCatch="True" NewLineForFinally="True" NewLineForMembersInObjectInit="True" NewLineForMembersInAnonymousTypes="True" NewLineForClausesInQuery="True" SpacingAfterMethodDeclarationName="False" SpaceWithinMethodDeclarationParenthesis="False" SpaceBetweenEmptyMethodDeclarationParentheses="False" SpaceAfterMethodCallName="False" SpaceWithinMethodCallParentheses="False" SpaceBetweenEmptyMethodCallParentheses="False" SpaceAfterControlFlowStatementKeyword="True" SpaceWithinExpressionParentheses="False" SpaceWithinCastParentheses="False" SpaceWithinOtherParentheses="False" SpaceAfterCast="False" SpacesIgnoreAroundVariableDeclaration="False" SpaceBeforeOpenSquareBracket="False" SpaceBetweenEmptySquareBrackets="False" SpaceWithinSquareBrackets="False" SpaceAfterColonInBaseTypeDeclaration="True" SpaceAfterComma="True" SpaceAfterDot="False" SpaceAfterSemicolonsInForStatement="True" SpaceBeforeColonInBaseTypeDeclaration="True" SpaceBeforeComma="False" SpaceBeforeDot="False" SpaceBeforeSemicolonsInForStatement="False" SpacingAroundBinaryOperator="Single" WrappingPreserveSingleLine="True" WrappingKeepStatementsOnSingleLine="True" PlaceSystemDirectiveFirst="True" scope="text/x-csharp" />
         </Policies>
       </Properties>
     </MonoDevelop>

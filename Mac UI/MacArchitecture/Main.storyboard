@@ -763,6 +763,17 @@
                                     <segue destination="N2y-2w-TTs" kind="show" id="FE3-8n-zaK"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1CA-qb-7R1">
+                                <rect key="frame" x="14" y="80" width="120" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="OrdinaryTable" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2op-t1-BlJ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="U0F-Wx-S6Q" kind="show" id="ugj-e6-rEc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="hMU-JO-FTU" firstAttribute="centerY" secondItem="53S-Or-vaJ" secondAttribute="centerY" id="2Iz-iL-qx1"/>
@@ -1753,6 +1764,40 @@
             </objects>
             <point key="canvasLocation" x="75" y="1235"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="vAI-u6-3Hr">
+            <objects>
+                <windowController showSeguePresentationStyle="single" id="U0F-Wx-S6Q" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="n6j-F1-wEx">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="259" width="480" height="274"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
+                        <connections>
+                            <outlet property="delegate" destination="U0F-Wx-S6Q" id="fcB-JG-OOh"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="h9K-He-ygD" kind="relationship" relationship="window.shadowedContentViewController" id="tjB-U3-YsK"/>
+                    </connections>
+                </windowController>
+                <customObject id="Ag7-Ox-ki7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1007" y="1126"/>
+        </scene>
+        <!--Ordinary Table View Controller-->
+        <scene sceneID="utu-fH-Gli">
+            <objects>
+                <viewController id="h9K-He-ygD" customClass="OrdinaryTableViewController" sceneMemberID="viewController">
+                    <view key="view" id="FdI-Wx-ZBr">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="zYz-pi-ddl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1019" y="1569"/>
+        </scene>
         <!--Tree Table View Controller-->
         <scene sceneID="GTs-6t-mqH">
             <objects>
@@ -1923,7 +1968,7 @@
                 </viewController>
                 <customObject id="NMq-Qs-FI9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="82" y="1794"/>
+            <point key="canvasLocation" x="76" y="1794"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="4fO-lU-Z4s">
