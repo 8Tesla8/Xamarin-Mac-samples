@@ -2,10 +2,10 @@
 using AppKit;
 using System.Linq;
 using System.Collections.Generic;
-using MacArchitecture.UiElements.Table.Tree.TrTblItems;
-using MacArchitecture.UiElements.Table.Tree.TrTblItems.OneColumn;
+using MacArchitecture.UiElements.Table.Tree.TreeTableItems;
+using MacArchitecture.UiElements.Table.Tree.TreeTableItems.OneColumn;
 
-namespace MacArchitecture.UiElements.Table.Tree.TrTblElements {
+namespace MacArchitecture.UiElements.Table.Tree.TreeTableElements {
     internal class SimpleTreeTableDataSource : BaseTreeTableDataSource<SimpleTreeTableItem> {
 
         private NSOutlineView _tbl;

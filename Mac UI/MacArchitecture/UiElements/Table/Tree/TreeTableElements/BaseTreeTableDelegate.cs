@@ -1,11 +1,11 @@
 ﻿using System;
 using AppKit;
 using Foundation;
-using MacArchitecture.UiElements.Table.Tree.TrTblItems;
+using MacArchitecture.UiElements.Table.Tree.TreeTableItems;
 using MacArchitecture.UiElements.UI.Table.Tree;
 using MacArchitecture.UiElements.Utils;
 
-namespace MacArchitecture.UiElements.Table.Tree.TrTblElements {
+namespace MacArchitecture.UiElements.Table.Tree.TreeTableElements {
     internal class BaseTreeTableDelegate : NSOutlineViewDelegate {
         private bool _rowAlwaysMustBeSelected;
 

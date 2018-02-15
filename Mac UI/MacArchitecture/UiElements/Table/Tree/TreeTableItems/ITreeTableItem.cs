@@ -1,7 +1,12 @@
 ﻿using System;
 using AppKit;
 
-namespace MacArchitecture.UiElements.Table.Tree.TrTblItems {
+namespace MacArchitecture.UiElements.Table.Tree.TreeTableItems {
+
+    //todo impr
+    //remove this class have ITreeTableRow
+    //create examples шаблонным методом
+
     //NOTE: IMPLEMENTATION MUST BE INHERIT FROM NSObject
     internal interface ITreeTableItem {
         ITreeTableItem GetChild(nint childIndex);

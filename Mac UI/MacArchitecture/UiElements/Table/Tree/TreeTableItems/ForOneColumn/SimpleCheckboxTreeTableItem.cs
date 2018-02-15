@@ -1,6 +1,7 @@
 ﻿using System;
 using AppKit;
 using CoreGraphics;
+using MacArchitecture.UiElements.Table.Tree.TreeTableItems.OneColumn;
 
 namespace MacArchitecture.UiElements.Table.Tree.TrTblItems.OneColumn {
     internal class SimpleCheckboxTreeTableItem : SimpleTreeTableItem {

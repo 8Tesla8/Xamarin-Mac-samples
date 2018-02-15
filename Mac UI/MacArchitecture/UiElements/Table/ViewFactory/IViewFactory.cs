@@ -1,20 +1,22 @@
 ﻿using System;
 using AppKit;
-using MacArchitecture.UiElements.Table.Ordinary;
+using MacArchitecture.UiElements.Table.TableRow;
 
 namespace MacArchitecture.UiElements.Table.ViewFactory {
     public interface IViewFactory {
-
-        NSView CreateView(ITableItem tableItem, string title);
+        NSView CreateView(ITableRow tableItem, string title);
     }
 
-    public enum TypeCellView {
-        Checkbox,
+
+    public enum TypeCell {
         TextField,
         TextView,
 
-        //do not have
-        //Button,
-        //PopUp
+        Button,
+        Checkbox,
+        PopUp
     }
 }
+
+  
+

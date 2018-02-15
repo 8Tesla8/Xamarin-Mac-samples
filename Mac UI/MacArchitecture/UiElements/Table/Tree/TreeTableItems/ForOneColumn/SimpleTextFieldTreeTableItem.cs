@@ -1,7 +1,7 @@
 ﻿using System;
 using AppKit;
 
-namespace MacArchitecture.UiElements.Table.Tree.TrTblItems.OneColumn {
+namespace MacArchitecture.UiElements.Table.Tree.TreeTableItems.OneColumn {
     internal class SimpleTextFieldTreeTableItem : SimpleTreeTableItem {
 
         public override NSView CreateView(string columnIdentifier) {

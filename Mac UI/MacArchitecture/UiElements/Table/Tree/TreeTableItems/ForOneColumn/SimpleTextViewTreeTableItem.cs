@@ -1,7 +1,7 @@
 ﻿using System;
 using AppKit;
 
-namespace MacArchitecture.UiElements.Table.Tree.TrTblItems.OneColumn {
+namespace MacArchitecture.UiElements.Table.Tree.TreeTableItems.OneColumn {
     internal class SimpleTextViewTreeTableItem : SimpleTreeTableItem {
         public int CountStandartRows { get; set; }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using AppKit;
 using Foundation;
 
-namespace MacArchitecture.UiElements.Table.Tree.TrTblItems {
+namespace MacArchitecture.UiElements.Table.Tree.TreeTableItems {
     internal abstract class TreeTableItem : NSObject, ITreeTableItem {
         protected readonly nfloat _standartRowHeight = 16f;
 

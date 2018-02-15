@@ -20,6 +20,8 @@ namespace MacArchitecture {
             //create base data source with dynamic
         
             //create table with methods "copy:" and "copyRow:"
+       
+            //create all types of cell
         }
     }
 }

@@ -26,6 +26,12 @@ namespace MacArchitecture.UiElements.TextView {
                 if (!leave)
                     Menu.RemoveItem(menuItem);
             }
+
+
+            var maxSize = new CoreGraphics.CGSize();
+            maxSize.Height = nfloat.MaxValue;
+            maxSize.Width = TextContainer.Size.Width;
+            TextContainer.Size = maxSize;
         }
 
         public void HideFindPanel() {

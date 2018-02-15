@@ -2,9 +2,9 @@
 using AppKit;
 using Foundation;
 using System.Collections.Generic;
-using MacArchitecture.UiElements.Table.Tree.TrTblItems;
+using MacArchitecture.UiElements.Table.Tree.TreeTableItems;
 
-namespace MacArchitecture.UiElements.Table.Tree.TrTblElements {
+namespace MacArchitecture.UiElements.Table.Tree.TreeTableElements {
     internal abstract class BaseTreeTableDataSource<T> : NSOutlineViewDataSource
         where T : ITreeTableItem {
 

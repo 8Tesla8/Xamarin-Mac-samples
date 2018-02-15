@@ -3,7 +3,7 @@ using AppKit;
 using Foundation;
 using System.Collections.Generic;
 
-namespace MacArchitecture.UiElements.Table.Tree.TrTblItems.OneColumn {
+namespace MacArchitecture.UiElements.Table.Tree.TreeTableItems.OneColumn {
     // can be a group item
     internal class SimpleTreeTableItem : TreeTableItem {
         public string Title { get; set; }

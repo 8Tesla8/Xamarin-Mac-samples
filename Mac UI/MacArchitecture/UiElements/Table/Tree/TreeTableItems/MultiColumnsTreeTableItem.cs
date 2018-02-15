@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using AppKit;
 
-namespace MacArchitecture.UiElements.Table.Tree.TrTblItems {
+namespace MacArchitecture.UiElements.Table.Tree.TreeTableItems {
     internal class MultiColumnsTreeTableItem : TreeTableItem {
         public bool NeedExpand { get; set; }
 

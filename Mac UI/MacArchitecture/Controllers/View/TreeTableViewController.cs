@@ -15,6 +15,8 @@ namespace MacArchitecture {
             //in one table
 
             //simple items in one table
+            //шаблонный метод использовать 
+
         }
     }
 }
