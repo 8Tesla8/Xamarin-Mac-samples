@@ -16,25 +16,24 @@ namespace MacArchitecture.UiElements.Table.TableRow {
     }
 
 
-    public interface ITextViewCell : ITextFieldCell{
-        
+    public interface ITextViewCell : ITextFieldCell {
     }
 
 
-    public interface IButtonCell : ICell{
+    public interface IButtonCell : ICell {
         bool Enabled { get; set; }
         Action Activated { get; set; }
     }
 
 
-    public interface ICheckBoxButtonCell : IButtonCell{
-        bool? State { get; set; } 
+    public interface ICheckboxCell : IButtonCell {
+        bool? State { get; set; }
         bool AllowMixedState { get; set; }
         Action<bool?> StateChanged { get; set; }
     }
 
 
-    public interface IPopUpButtonCell : ICell{
+    public interface IPopUpButtonCell : IButtonCell {
         Action<int> SelectItem { get; set; }
         string[] MenuTitles { get; set; }
     }

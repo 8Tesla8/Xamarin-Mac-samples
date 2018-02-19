@@ -91,12 +91,12 @@ VIEW ITEMS
     //todo nn    //todo NotNeed
 
 * snippet for comments
-  //short //long - do not use long
-    tst   tstt
-    impl  impll  
-    impr  imprr
-    rpl   rpll
-    nn    nnn
+  //short 
+    tst   
+    impl    
+    impr  
+    rpl   
+    nn    
     win
 
     td - //todo $name$

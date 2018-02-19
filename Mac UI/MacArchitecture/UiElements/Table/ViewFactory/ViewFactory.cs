@@ -63,7 +63,7 @@ namespace MacArchitecture.UiElements.Table.ViewFactory {
 
 
                 case TypeCell.Checkbox:
-                    var ckbCell = (ICheckBoxButtonCell)cell;
+                    var ckbCell = (ICheckboxCell)cell;
 
                     var tblCellView = new NSTableCellView();
 

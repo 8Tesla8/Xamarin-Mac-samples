@@ -94,6 +94,7 @@
     <Folder Include="UiElements\Table\Ordinary\TableElements\" />
     <Folder Include="Documentation\" />
     <Folder Include="UiElements\Table\TableItem\" />
+    <Folder Include="UiElements\Table\TableItem\Cell\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -193,6 +194,7 @@
     </Compile>
     <Compile Include="UiElements\Table\TableItem\ITableRow.cs" />
     <Compile Include="UiElements\Table\TableItem\ICell.cs" />
+    <Compile Include="UiElements\Table\TableItem\Cell\Cell.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
