@@ -12,9 +12,15 @@ namespace MacArchitecture
 	[Register ("OrdinaryTableViewController")]
 	partial class OrdinaryTableViewController
 	{
+		[Outlet]
+		AppKit.NSTableView tbl_cells { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (tbl_cells != null) {
+				tbl_cells.Dispose ();
+				tbl_cells = null;
+			}
 		}
 	}
 }
