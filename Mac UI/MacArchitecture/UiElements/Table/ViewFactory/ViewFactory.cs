@@ -13,13 +13,13 @@ namespace MacArchitecture.UiElements.Table.ViewFactory {
             var cell = tableRow.GetCell(columnIdentifier);
 
 
-            if(!string.IsNullOrEmpty(cell.Text))
+            if (!string.IsNullOrEmpty(cell.Text))
                 cellValue.Text = cell.Text;
-            if(string.IsNullOrEmpty(cell.Tooltip))
+            if (string.IsNullOrEmpty(cell.Tooltip))
                 cellValue.Tooltip = cell.Tooltip;
 
             switch (cell.TypeCell) {
-                
+
                 case TypeCell.TextField:
 
                     var tfCell = (ITextFieldCell)cell;
@@ -33,7 +33,11 @@ namespace MacArchitecture.UiElements.Table.ViewFactory {
                     tf.Selectable = tfCell.Selectable;
 
                     tf.StringValue = cellValue.Text;
-                    tf.ToolTip = cellValue.Tooltip;
+
+                    if (cellValue.Tooltip == null)
+                        tf.ToolTip = tf.StringValue;
+                    else
+                        tf.ToolTip = cellValue.Tooltip;
 
                     return tf;
 
@@ -87,17 +91,17 @@ namespace MacArchitecture.UiElements.Table.ViewFactory {
 
                     if (ckbCell.State == null)
                         checkBox.State = NSCellStateValue.Mixed;
-                    else if (ckbCell.State == true) 
+                    else if (ckbCell.State == true)
                         checkBox.State = NSCellStateValue.On;
-                    else if(ckbCell.State == false)
+                    else if (ckbCell.State == false)
                         checkBox.State = NSCellStateValue.Off;
-        
+
                     checkBox.Enabled = ckbCell.Enabled;
 
                     checkBox.Activated += (sender, e) => {
                         var ckb = (NSButton)sender;
-                        bool? state = null;                        
-                       
+                        bool? state = null;
+
                         if (ckb.State == NSCellStateValue.Mixed)
                             state = null;
                         else if (ckb.State == NSCellStateValue.On)

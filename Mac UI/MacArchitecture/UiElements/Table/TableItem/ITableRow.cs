@@ -40,11 +40,18 @@ namespace MacArchitecture.UiElements.Table.TableRow {
     //todo impl
     //create DynamicTableItem - data is dynamic
 
-    public class TableItem : ITableRow {
+    public class TableRow : ITableRow {
+        public TableRow() {
+            RowHeight = 16f;
+            Cells = new Dictionary<string, ICell>();
+
+            GroupItem = false;
+            Selectable = true;
+        }
 
         public int Id { get; set; }
         public string Identifier { get; set; }
-        public nfloat RowHeight { get; set; }
+        public nfloat RowHeight { get; set; } 
         public bool GroupItem { get; set; }
         public bool Selectable { get; set; }
 

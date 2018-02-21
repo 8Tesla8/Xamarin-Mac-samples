@@ -32,11 +32,13 @@ namespace MacArchitecture.UiElements.Table.Ordinary.TableElements {
         public abstract void ClearData();
 
         public abstract void AddRow(ITableRow tableRow);
+
+        public override abstract nint GetRowCount(NSTableView tableView);
     }
 
 
-    public class DataSource : BaseTableDataSource {
-        public DataSource(NSTableView table) : base(table) {
+    public class TableDataSource : BaseTableDataSource {
+        public TableDataSource(NSTableView table) : base(table) {
             _data = new List<ITableRow>();       
         }
 
@@ -80,6 +82,10 @@ namespace MacArchitecture.UiElements.Table.Ordinary.TableElements {
             //it will work well
             _table.ReloadData(new NSIndexSet(row), 
                               columnRange);
+        }
+
+        public override nint GetRowCount(NSTableView tableView) {
+            return _data.Count;
         }
     }
 }

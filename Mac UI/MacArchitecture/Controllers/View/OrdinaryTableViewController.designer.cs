@@ -13,6 +13,9 @@ namespace MacArchitecture
 	partial class OrdinaryTableViewController
 	{
 		[Outlet]
+		AppKit.NSButton btn_reloadData { get; set; }
+
+		[Outlet]
 		AppKit.NSTableView tbl_cells { get; set; }
 		
 		void ReleaseDesignerOutlets ()
@@ -20,6 +23,11 @@ namespace MacArchitecture
 			if (tbl_cells != null) {
 				tbl_cells.Dispose ();
 				tbl_cells = null;
+			}
+
+			if (btn_reloadData != null) {
+				btn_reloadData.Dispose ();
+				btn_reloadData = null;
 			}
 		}
 	}
