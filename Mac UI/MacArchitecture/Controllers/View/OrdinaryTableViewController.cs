@@ -1,6 +1,7 @@
 using System;
 using Foundation;
 using AppKit;
+using MacArchitecture.UiElements.Table.Ordinary.TableElements;
 
 namespace MacArchitecture {
     public partial class OrdinaryTableViewController : NSViewController {
@@ -18,10 +19,17 @@ namespace MacArchitecture {
 
             //create base delegate with IViewFactory
             //create base data source with dynamic
-        
+
             //create table with methods "copy:" and "copyRow:"
-       
+
             //create all types of cell
+
+            var ds = new DataSource(tbl_cells);
+            var dlg = new BaseTableDelegate(ds);
+
+
+            tbl_cells.Delegate = dlg;
+            tbl_cells.DataSource = ds;
         }
     }
 }

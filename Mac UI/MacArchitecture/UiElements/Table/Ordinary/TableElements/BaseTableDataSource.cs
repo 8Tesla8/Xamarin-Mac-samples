@@ -4,26 +4,26 @@ using AppKit;
 using Foundation;
 using MacArchitecture.UiElements.Table.TableRow;
 
-namespace MacArchitecture.UiElements.Table.Simple.DataSource {
-    internal abstract class BaseTableDataSource : NSTableViewDataSource {
-        protected NSTableView _table;
+namespace MacArchitecture.UiElements.Table.Ordinary.TableElements {
+    //internal abstract class BaseTableDataSource : NSTableViewDataSource {
+    //    protected NSTableView _table;
 
-        public Action RowsAdded;
+    //    public Action RowsAdded;
 
-        public void InitTable(NSTableView table) {
-            _table = table;
-        }
+    //    public void InitTable(NSTableView table) {
+    //        _table = table;
+    //    }
 
-        //public abstract List<BaseRowModel> GetData();
+    //    //public abstract List<BaseRowModel> GetData();
 
-        public abstract void ClearDataSource();
-    }
+    //    public abstract void ClearDataSource();
+    //}
 
-    public abstract class BaseDataSource : NSTableViewDataSource{
+    public abstract class BaseTableDataSource : NSTableViewDataSource{
      
         protected NSTableView _table;
 
-        public BaseDataSource(NSTableView table) {
+        protected BaseTableDataSource(NSTableView table) {
             _table = table;
         }
 
@@ -34,14 +34,17 @@ namespace MacArchitecture.UiElements.Table.Simple.DataSource {
         public abstract void AddRow(ITableRow tableRow);
     }
 
-    public class DataSource : BaseDataSource {
+
+    public class DataSource : BaseTableDataSource {
         public DataSource(NSTableView table) : base(table) {
             _data = new List<ITableRow>();       
         }
 
+
         public override ITableRow GetRow(int row) {
-            throw new NotImplementedException();
+            return Data[row];
         }
+
 
         private List<ITableRow> _data;
         public List<ITableRow> Data {
@@ -52,13 +55,12 @@ namespace MacArchitecture.UiElements.Table.Simple.DataSource {
             }
         }
 
-        public void ClearDataSource() {
-            Data = new List<ITableRow>();
-        }
 
         public override void ClearData() {
-            throw new NotImplementedException();
+            Data = new List<ITableRow>();
+            _table.ReloadData();
         }
+
 
         public override void AddRow(ITableRow tableRow) {
             var row = Data.Count;

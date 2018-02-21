@@ -111,8 +111,6 @@ namespace MacArchitecture.UiElements.Table.ViewFactory {
                     tblCellView.AddSubview(checkBox);
 
                     return tblCellView;
-
-           
             }
 
 

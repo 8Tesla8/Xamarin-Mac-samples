@@ -18,38 +18,38 @@ namespace MacArchitecture.UiElements.Table.TableRow {
 
     //todo impl
     //create SimpleTableItem - cells is only TextField
-    public abstract class SimpleTableItem : ITableRow { 
-        private TextFieldCell 
+    //public abstract class SimpleTableItem : ITableRow { 
+    //    private TextFieldCell 
 
-        public int Id { get; set; }
-        public string Identifier { get; set; }
-        public nfloat RowHeight { get; set; }
-        public bool GroupItem { get; set; }
-        public bool Selectable { get; set; }
-    
-        public ICell GetCell(string columnIdentifier) {
-            
-        }
+    //    public int Id { get; set; }
+    //    public string Identifier { get; set; }
+    //    public nfloat RowHeight { get; set; }
+    //    public bool GroupItem { get; set; }
+    //    public bool Selectable { get; set; }
 
-        public Dictionary<string, string> Value { get; set; }
+    //    public ICell GetCell(string columnIdentifier) {
 
-        public (string Text, string Tooltip) GetValue(string columnIdentifier) {
-            throw new NotImplementedException();
-        }
-    }
+    //    }
 
+    //    public Dictionary<string, string> Value { get; set; }
 
+    //    public (string Text, string Tooltip) GetValue(string columnIdentifier) {
+    //        throw new NotImplementedException();
+    //    }
+    //}
+    //todo impl
     //create DynamicTableItem - data is dynamic
 
     public class TableItem : ITableRow {
-        public TableItem() {
-        }
 
         public int Id { get; set; }
         public string Identifier { get; set; }
         public nfloat RowHeight { get; set; }
         public bool GroupItem { get; set; }
         public bool Selectable { get; set; }
+
+        public Dictionary<string, ICell> Cells { get; set; }
+
 
         public ICell GetCell(string columnIdentifier) {
             return Cells[columnIdentifier];
@@ -57,10 +57,9 @@ namespace MacArchitecture.UiElements.Table.TableRow {
 
 
         public (string Text, string Tooltip) GetValue(string columnIdentifier) {
-            throw new NotImplementedException();
+            return (Cells[columnIdentifier].Text,
+                    Cells[columnIdentifier].Tooltip);
         }
-
-        public Dictionary<string, ICell> Cells { get; set; }
     }
 
 
