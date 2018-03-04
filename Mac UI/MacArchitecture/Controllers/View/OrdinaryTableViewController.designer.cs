@@ -13,7 +13,7 @@ namespace MacArchitecture
 	partial class OrdinaryTableViewController
 	{
 		[Outlet]
-		AppKit.NSButton btn_reloadData { get; set; }
+		AppKit.NSTableView tbl { get; set; }
 
 		[Outlet]
 		AppKit.NSTableView tbl_cells { get; set; }
@@ -25,9 +25,9 @@ namespace MacArchitecture
 				tbl_cells = null;
 			}
 
-			if (btn_reloadData != null) {
-				btn_reloadData.Dispose ();
-				btn_reloadData = null;
+			if (tbl != null) {
+				tbl.Dispose ();
+				tbl = null;
 			}
 		}
 	}

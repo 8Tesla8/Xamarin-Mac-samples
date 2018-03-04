@@ -119,7 +119,6 @@
     <Compile Include="UiElements\Menu\BaseMenu.cs" />
     <Compile Include="UiElements\Button\DefaultButton.cs" />
     <Compile Include="UiElements\Button\LinkButton.cs" />
-    <Compile Include="UiElements\Table\Ordinary\BaseTable.cs" />
     <Compile Include="UiElements\TextField\TextFieldDelegate.cs" />
     <Compile Include="UiElements\TextView\BaseTextView.cs" />
     <Compile Include="UiElements\TextView\Delegate\UndoTextDelegate.cs" />
@@ -203,6 +202,7 @@
     <Compile Include="UiElements\Table\TableItem\ICell.cs" />
     <Compile Include="UiElements\Table\TableItem\Cell\Cell.cs" />
     <Compile Include="Autofac\Injection.cs" />
+    <Compile Include="UiElements\Table\TableItem\ITreeTableRow.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

@@ -20,8 +20,6 @@ namespace MacArchitecture {
         public override void ViewDidLoad() {
             base.ViewDidLoad();
 
-            btn_reloadData.Activated += (sender, e) =>
-                tbl_cells.ReloadData();
 
             //update selected 1 column cells
             //update deffernt cells
@@ -33,17 +31,18 @@ namespace MacArchitecture {
 
             InitTableCell();
 
+            InitTable();
+
             //create 2 table 
             //simple - all with texfields
             //create update selected column and row
             //create copy cell and copy row
             //create table with methods "copy:" and "copyRow:"
 
-
-            //create 3 table
             //dynamic data - DynamicTableRow
         }
 
+        #region CreateData
 
         private List<ITableRow> CreateDataForCellTable(string[] columnIdentifier, int countRows) {
             var list = new List<ITableRow>();
@@ -159,6 +158,52 @@ namespace MacArchitecture {
         }
 
 
+        private List<ITableRow> CreateSimpleData(string[] columnIdentifier, int countRows){
+
+            var rand = new Random();
+            var min = 0;
+            var max = 900;
+
+            var list = new List<ITableRow>();
+            for (int i = 0; i < countRows; i++) {
+                var tr = new SimpleTableRow();
+ 
+                foreach (var identifier in columnIdentifier) { 
+                    tr.DataCell.Add(identifier, 
+                                    nameof(SimpleTableRow) + " " + rand.Next(min, max) );
+                }
+
+                list.Add(tr);
+            }
+
+            return list;
+        }
+
+
+        private List<ITableRow> CreateDynamicData(string[] columnIdentifier, int countRows){
+            //todo impl
+            var rand = new Random();
+            var min = 0;
+            var max = 900;
+
+            var list = new List<ITableRow>();
+            for (int i = 0; i < countRows; i++) {
+                foreach (var identifier in columnIdentifier) {
+                
+
+                    //init cell - int, string, double 
+                }
+            }
+
+            return list;
+        }
+
+        #endregion
+
+
+        #region InitTable
+
+
         private void InitTableCell() {
             var ds = new TableDataSource(tbl_cells);
             var dlg = new BaseTableDelegate(ds);
@@ -176,6 +221,25 @@ namespace MacArchitecture {
         }
 
 
+        private void InitTable(){
+            var ds = new TableDataSource(tbl);
+            var dlg = new BaseTableDelegate(ds);
+
+            tbl.Delegate = dlg;
+            tbl.DataSource = ds;
+
+            var tblColumnIdentifier = new string[] { "C0", "C1", "C2", "C3", "C4" };
+            InitTableColumns(tblColumnIdentifier, tbl);
+
+            var data = new List<ITableRow>();
+            data.AddRange(CreateSimpleData(tblColumnIdentifier, 3));
+            data.AddRange(CreateDynamicData(tblColumnIdentifier, 3));
+
+            ds.Data.AddRange(data);
+            tbl.ReloadData();
+        }
+
+
         private void InitTableColumns(string[] columnIdentifier, NSTableView tableView) {
 
             var columns = tableView.TableColumns().ToList();
@@ -185,11 +249,14 @@ namespace MacArchitecture {
             for (int i = 0; i < columnIdentifier.Count(); i++) {
                 var column = new NSTableColumn();
                 column.Identifier = columnIdentifier[i];
-
                 column.Title = column.Identifier;
+                column.Width = 150;
 
                 tableView.AddColumn(column);
             }
         }
+
+        #endregion
+
     }
 }

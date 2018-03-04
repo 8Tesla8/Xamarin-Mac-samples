@@ -4,15 +4,6 @@ using Foundation;
 
 namespace MacArchitecture.UiElements.Table.Ordinary {
 
-
-    public class OrdinaryTable{
-
-        //todo impl
-        //copy action
-        //copy row
-
-    }
-
     [Register(nameof(BaseOrdinaryTable))]
     public class BaseOrdinaryTable : NSTableView {
         public BaseOrdinaryTable(IntPtr handle) : base(handle) {

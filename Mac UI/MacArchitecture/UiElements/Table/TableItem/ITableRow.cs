@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
+using MacArchitecture.UiElements.Table.TableItem.Cell;
 
 namespace MacArchitecture.UiElements.Table.TableRow {
 
@@ -16,29 +18,6 @@ namespace MacArchitecture.UiElements.Table.TableRow {
         (string Text, string Tooltip) GetValue(string columnIdentifier);
     }
 
-    //todo impl
-    //create SimpleTableItem - cells is only TextField
-    //public abstract class SimpleTableItem : ITableRow { 
-    //    private TextFieldCell 
-
-    //    public int Id { get; set; }
-    //    public string Identifier { get; set; }
-    //    public nfloat RowHeight { get; set; }
-    //    public bool GroupItem { get; set; }
-    //    public bool Selectable { get; set; }
-
-    //    public ICell GetCell(string columnIdentifier) {
-
-    //    }
-
-    //    public Dictionary<string, string> Value { get; set; }
-
-    //    public (string Text, string Tooltip) GetValue(string columnIdentifier) {
-    //        throw new NotImplementedException();
-    //    }
-    //}
-    //todo impl
-    //create DynamicTableItem - data is dynamic
 
     public class TableRow : ITableRow {
         public TableRow() {
@@ -51,7 +30,7 @@ namespace MacArchitecture.UiElements.Table.TableRow {
 
         public int Id { get; set; }
         public string Identifier { get; set; }
-        public nfloat RowHeight { get; set; } 
+        public nfloat RowHeight { get; set; }
         public bool GroupItem { get; set; }
         public bool Selectable { get; set; }
 
@@ -70,17 +49,80 @@ namespace MacArchitecture.UiElements.Table.TableRow {
     }
 
 
+    public class SimpleTableRow : ITableRow {
+        public SimpleTableRow() {
+            RowHeight = 16f;
 
-    public interface ITreeTableRow : ITableRow {
-        bool Expandable { get; set; }
+            GroupItem = false;
+            Selectable = true;
 
-        ITreeTableRow GetChild(nint childIndex);
-        nint GetChildrenCount();
+            _cell = new TextFieldCell();
+            DataCell = new Dictionary<string, string>();
+        }
+
+        private TextFieldCell _cell;
+
+        public int Id { get; set; }
+        public string Identifier { get; set; }
+        public nfloat RowHeight { get; set; }
+        public bool GroupItem { get; set; }
+        public bool Selectable { get; set; }
+
+        public Dictionary<string, string> DataCell { get; set; }
+
+
+        public ICell GetCell(string columnIdentifier) {
+            return _cell;
+        }
+
+        public (string Text, string Tooltip) GetValue(string columnIdentifier) {
+            return (DataCell[columnIdentifier],
+                    DataCell[columnIdentifier]);
+        }
     }
 
+
     //todo impl
-    //map
-    //abstract class TreeTableRow : NSObject, ITreeTableRow
+    public class DynamicTableRow : ITableRow{
+       
+        public DynamicTableRow() {
+            RowHeight = 16f;
+
+            GroupItem = false;
+            Selectable = true;
+
+            _cell = new TextFieldCell();
+
+            DataCell = new ExpandoObject();
+            Proxy = (IDictionary<string, object>)DataCell;
+        }
+
+        private TextFieldCell _cell;
+
+        public int Id { get; set; }
+        public string Identifier { get; set; }
+        public nfloat RowHeight { get; set; }
+        public bool GroupItem { get; set; }
+        public bool Selectable { get; set; }
+
+        public dynamic DataCell { get; }
+        public IDictionary<string, object> Proxy { get; }
+
+
+        public ICell GetCell(string columnIdentifier) {
+            return _cell;
+        }
+
+        public (string Text, string Tooltip) GetValue(string columnIdentifier) {
+            var cellValue = Proxy[columnIdentifier];
+
+            if(cellValue == null)
+                return (string.Empty, string.Empty);
+            else
+                return (DataCell[columnIdentifier],
+                 DataCell[columnIdentifier]);
+        }
+    }
 
 }
 
