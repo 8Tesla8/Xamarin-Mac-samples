@@ -16,13 +16,13 @@ namespace MacArchitecture.UiElements.Table.Ordinary.TableElements {
         }
 
 
-        //public override nfloat GetRowHeight(NSTableView tableView, nint row) {
-        //    return base.GetRowHeight(tableView, row);
-        //}
+        public override nfloat GetRowHeight(NSTableView tableView, nint row) {
+            var tableRow = _dataSource.GetRow((int)row);
+            return tableRow.RowHeight;
+        }
 
 
         public override NSView GetViewForItem(NSTableView tableView, NSTableColumn tableColumn, nint row) {
-
             var tableRow = _dataSource.GetRow((int)row);
             var view = _viewFactory.CreateView(tableRow, tableColumn.Identifier);
 
@@ -30,20 +30,16 @@ namespace MacArchitecture.UiElements.Table.Ordinary.TableElements {
         }
 
 
-
-        //public override bool IsGroupRow(NSTableView tableView, nint row) {
-        //    var tableRow = _dataSource.GetRow((int)row);
-        //    return tableRow.GroupItem;
-        //}
+        public override bool IsGroupRow(NSTableView tableView, nint row) {
+            var tableRow = _dataSource.GetRow((int)row);
+            return tableRow.GroupItem;
+        }
 
 
         public override bool ShouldSelectRow(NSTableView tableView, nint row) {
             var tableRow = _dataSource.GetRow((int)row);
             return tableRow.Selectable;
         }
-        //public override bool SelectionShouldChange(NSTableView tableView) {
-        //    return base.SelectionShouldChange(tableView);
-        //}
 
 
         public override void SelectionDidChange(Foundation.NSNotification notification) {

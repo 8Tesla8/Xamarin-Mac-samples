@@ -9,14 +9,14 @@ namespace MacArchitecture.UiElements.Table.ViewFactory {
 
 
     public enum TypeCell {
-        TextField,
-        TextView,
+        TextField = 0,
+        TextView = 1,
 
-        Button,
-        Checkbox,
-        PopUp
+        Button = 2,
+        Checkbox = 3,
+        PopUp = 4,
     }
 }
 
-  
+
 

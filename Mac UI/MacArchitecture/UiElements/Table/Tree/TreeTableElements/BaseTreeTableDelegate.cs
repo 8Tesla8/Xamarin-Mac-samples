@@ -71,9 +71,6 @@ namespace MacArchitecture.UiElements.Table.Tree.TreeTableElements {
 
         public override void SelectionDidChange(NSNotification notification) {
             ChangeSelectedRow?.Invoke(notification.Object, EventArgs.Empty);
-
-            //do not call base implementation
-            //base.SelectionDidChange(notification);
         }
 
 
@@ -82,18 +79,12 @@ namespace MacArchitecture.UiElements.Table.Tree.TreeTableElements {
                 return false;
 
             return true;
-
-            //do not call base implementation
-            //return base.SelectionShouldChange(outlineView);
         }
 
 
         public override bool ShouldSelectItem(NSOutlineView outlineView, NSObject item) {
             var baseTreeTableItem = (ITreeTableItem)item;
             return baseTreeTableItem.CanSelectItem();
-
-            //do not call base implementation
-            //base.ShouldSelectItem(notification);
         }
     }
 }

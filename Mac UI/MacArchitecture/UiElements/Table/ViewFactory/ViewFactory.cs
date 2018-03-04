@@ -15,7 +15,7 @@ namespace MacArchitecture.UiElements.Table.ViewFactory {
 
             if (!string.IsNullOrEmpty(cell.Text))
                 cellValue.Text = cell.Text;
-            if (string.IsNullOrEmpty(cell.Tooltip))
+            if (!string.IsNullOrEmpty(cell.Tooltip))
                 cellValue.Tooltip = cell.Tooltip;
 
             switch (cell.TypeCell) {
@@ -33,11 +33,7 @@ namespace MacArchitecture.UiElements.Table.ViewFactory {
                     tf.Selectable = tfCell.Selectable;
 
                     tf.StringValue = cellValue.Text;
-
-                    if (cellValue.Tooltip == null)
-                        tf.ToolTip = tf.StringValue;
-                    else
-                        tf.ToolTip = cellValue.Tooltip;
+                    tf.ToolTip = cellValue.Tooltip;
 
                     return tf;
 
@@ -57,14 +53,52 @@ namespace MacArchitecture.UiElements.Table.ViewFactory {
                     return txtv;
 
                 case TypeCell.Button:
-                    //todo impl 
-                    //look at xamarin how make button
-                    throw new System.NotImplementedException("name");
+                    var btnCell = (IButtonCell)cell;
+
+                    //var btn = NSButton.CreateButton(btnCell.Text, btnCell.Activated);
+                   
+                    var btnView = new NSButton(new CGRect(0, 0, 80, 16));
+                    btnView.SetButtonType(NSButtonType.MomentaryPushIn);
+                    btnView.BezelStyle = NSBezelStyle.Rounded;
+                    btnView.Bordered = true;
+
+                    btnView.Title = btnCell.Text;
+                    btnView.ToolTip = btnCell.Tooltip;
+                    btnView.Enabled = btnCell.Enabled;
+                    btnView.Activated += (sender, e) => 
+                        btnCell.Activated();
+       
+                    //btnView.Image = 
+
+                    return btnView;
 
                 case TypeCell.PopUp:
-                    //todo impl
-                    throw new System.NotImplementedException("name");
+                    var btnPCell = (IPopUpButtonCell)cell;
 
+                    //var btnP = NSPopUpButton.CreateButton(btnPCell.Text, btnPCell.Activated);
+
+                    var btnPView = new NSPopUpButton(new CGRect(0, 0, 80, 16), true);
+                    btnPView.SetButtonType(NSButtonType.MomentaryPushIn);
+                    btnPView.BezelStyle = NSBezelStyle.Rounded;
+                    btnPView.PullsDown = false;
+                    btnPView.ToolTip = btnPCell.Tooltip;
+                    btnPView.Enabled = btnPCell.Enabled;
+
+                    btnPView.Menu.RemoveAllItems();
+
+                    foreach (var title in btnPCell.MenuTitles) 
+                        btnPView.AddItem(title);
+
+                    btnPView.Activated += (sender, e) => {
+                        btnPCell.IndexOfSelectedItem = (int)btnPView.IndexOfSelectedItem;
+
+                        if (btnPCell.SelectItem != null)
+                            btnPCell.SelectItem((int)btnPView.IndexOfSelectedItem);
+                        else
+                            btnPCell.Activated();
+                    };
+
+                    return btnPView;
 
                 case TypeCell.Checkbox:
                     var ckbCell = (ICheckboxCell)cell;
@@ -86,6 +120,7 @@ namespace MacArchitecture.UiElements.Table.ViewFactory {
 
                     var checkBox = new NSButton(new CGRect(5, 0, 16, 16));
                     checkBox.SetButtonType(NSButtonType.Switch);
+                    checkBox.Enabled = ckbCell.Enabled;
 
                     checkBox.AllowsMixedState = ckbCell.AllowMixedState;
 
@@ -109,7 +144,12 @@ namespace MacArchitecture.UiElements.Table.ViewFactory {
                         else if (ckb.State == NSCellStateValue.Off)
                             state = false;
 
-                        ckbCell.StateChanged(state);
+                        ckbCell.State = state;
+
+                        if (ckbCell.StateChanged != null)
+                            ckbCell.StateChanged(state);
+                        else
+                            ckbCell.Activated();
                     };
 
                     tblCellView.AddSubview(checkBox);

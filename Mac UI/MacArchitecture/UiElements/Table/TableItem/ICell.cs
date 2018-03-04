@@ -36,5 +36,6 @@ namespace MacArchitecture.UiElements.Table.TableRow {
     public interface IPopUpButtonCell : IButtonCell {
         Action<int> SelectItem { get; set; }
         string[] MenuTitles { get; set; }
+        int IndexOfSelectedItem { get; set; }
     }
 }

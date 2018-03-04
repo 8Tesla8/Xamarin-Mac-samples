@@ -3,9 +3,11 @@ using MacArchitecture.UiElements.Table.TableRow;
 using MacArchitecture.UiElements.Table.ViewFactory;
 
 namespace MacArchitecture.UiElements.Table.TableItem.Cell {
+    
     public class TextFieldCell : ITextFieldCell {
         public TextFieldCell() {
             TypeCell = TypeCell.TextField;
+            Tooltip = string.Empty;
         }
 
         public bool Selectable { get; set; }
@@ -21,6 +23,7 @@ namespace MacArchitecture.UiElements.Table.TableItem.Cell {
     public class TextViewCell : ITextViewCell {
         public TextViewCell() {
             TypeCell = TypeCell.TextView;
+            Tooltip = string.Empty;
         }
 
         public bool Selectable { get; set; }
@@ -36,6 +39,7 @@ namespace MacArchitecture.UiElements.Table.TableItem.Cell {
     public class ButtonCell : IButtonCell {
         public ButtonCell() {
             TypeCell = TypeCell.Button;
+            Tooltip = string.Empty;
         }
 
         public bool Enabled { get; set; }
@@ -48,9 +52,10 @@ namespace MacArchitecture.UiElements.Table.TableItem.Cell {
     }
 
 
-    public class Checkbox : ICheckboxCell {
-        public Checkbox() {
+    public class CheckboxCell : ICheckboxCell {
+        public CheckboxCell() {
             TypeCell = TypeCell.Checkbox;
+            Tooltip = string.Empty;
         }
 
         public bool? State { get; set; }
@@ -70,10 +75,12 @@ namespace MacArchitecture.UiElements.Table.TableItem.Cell {
     public class PopUpButtonCell : IPopUpButtonCell {
         public PopUpButtonCell() {
             TypeCell = TypeCell.PopUp;
+            Tooltip = string.Empty;
         }
 
         public Action<int> SelectItem { get; set; }
         public string[] MenuTitles { get; set; }
+        public int IndexOfSelectedItem { get; set; }
 
         public bool Enabled { get; set; }
         public Action Activated { get; set; }

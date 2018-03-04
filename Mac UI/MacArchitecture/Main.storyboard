@@ -1797,13 +1797,13 @@
                                 <rect key="frame" x="10" y="179" width="540" height="5"/>
                             </box>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ela-wS-QNp">
-                                <rect key="frame" x="20" y="192" width="520" height="150"/>
+                                <rect key="frame" x="20" y="192" width="520" height="123"/>
                                 <clipView key="contentView" id="WKo-es-ef9">
-                                    <rect key="frame" x="1" y="0.0" width="518" height="149"/>
+                                    <rect key="frame" x="1" y="0.0" width="518" height="122"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="oed-g2-O8n" viewBased="YES" id="3TZ-IW-hAf">
-                                            <rect key="frame" x="0.0" y="0.0" width="518" height="126"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="518" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1964,15 +1964,41 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CUl-1p-XsW">
+                                <rect key="frame" x="18" y="325" width="524" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Table with deffent types of cell" id="RvW-DY-Ja8">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n4e-CI-elp">
+                                <rect key="frame" x="400" y="41" width="76" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Lha-Wx-bNP" id="jlF-I4-OFv">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="G22-Je-e7b">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="Lha-Wx-bNP"/>
+                                            <menuItem title="Item 2" id="cpf-a1-bMS"/>
+                                            <menuItem title="Item 3" id="IcT-bD-Z94"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="ela-wS-QNp" firstAttribute="top" secondItem="FdI-Wx-ZBr" secondAttribute="top" constant="20" id="08M-TM-XFf"/>
+                            <constraint firstItem="ela-wS-QNp" firstAttribute="leading" secondItem="CUl-1p-XsW" secondAttribute="leading" id="CMA-9n-NQE"/>
                             <constraint firstItem="K2a-wb-Zdk" firstAttribute="top" secondItem="ela-wS-QNp" secondAttribute="bottom" constant="10" id="LRY-Me-7BM"/>
                             <constraint firstAttribute="trailing" secondItem="K2a-wb-Zdk" secondAttribute="trailing" constant="10" id="OwL-Wt-GLc"/>
                             <constraint firstItem="K2a-wb-Zdk" firstAttribute="leading" secondItem="FdI-Wx-ZBr" secondAttribute="leading" constant="10" id="RWu-pi-nmA"/>
                             <constraint firstItem="ela-wS-QNp" firstAttribute="leading" secondItem="FdI-Wx-ZBr" secondAttribute="leading" constant="20" id="SGm-fm-8dv"/>
                             <constraint firstItem="K2a-wb-Zdk" firstAttribute="centerY" secondItem="FdI-Wx-ZBr" secondAttribute="centerY" id="TlH-Dw-A8i"/>
+                            <constraint firstItem="CUl-1p-XsW" firstAttribute="top" secondItem="FdI-Wx-ZBr" secondAttribute="top" constant="20" id="fXL-4R-cwe"/>
                             <constraint firstAttribute="trailing" secondItem="ela-wS-QNp" secondAttribute="trailing" constant="20" id="pFQ-jt-ZqP"/>
+                            <constraint firstItem="ela-wS-QNp" firstAttribute="trailing" secondItem="CUl-1p-XsW" secondAttribute="trailing" id="w3E-wa-rYn"/>
+                            <constraint firstItem="ela-wS-QNp" firstAttribute="top" secondItem="CUl-1p-XsW" secondAttribute="bottom" constant="10" id="xPS-Fc-NFB"/>
                         </constraints>
                     </view>
                     <connections>
