@@ -1,6 +1,7 @@
 ﻿using System;
 using AppKit;
 using Foundation;
+using MacArchitecture.UiElements.Table.Ordinary.TableElements;
 
 namespace MacArchitecture.UiElements.Table.Ordinary {
 
@@ -10,28 +11,53 @@ namespace MacArchitecture.UiElements.Table.Ordinary {
         }
 
         public event EventHandler WasKeyDown;
+        public event EventHandler SelectedRowIsChanged;
 
-        //public event EventHandler SelectedRowIsChanged; - when use basetable delegate
-        //public override NSObject WeakDelegate {
-        //    get { return base.WeakDelegate; }
-        //    set {
-        //        if (base.WeakDelegate != null &&
-        //            base.WeakDelegate is BaseTableDelegate) {
-        //            var dlg = (BaseTableDelegate)base.WeakDelegate;
-        //            dlg.SelectionIsChanged -= SelectedRowChanged;
-        //        }
-        //        if (value is BaseTableDelegate) {
-        //            var dlg = (BaseTableDelegate)value;
-        //            dlg.SelectionIsChanged += SelectedRowChanged;
-        //        }
-        //        base.WeakDelegate = value;
-        //    }
-        //}
-        //public override NSObject WeakDataSource {
-        //    get { return base.WeakDataSource; }
-        //    set { base.WeakDataSource = value; }
-        //}
 
+        #region Delegate
+
+        private BaseTableDelegate _delegate;
+
+        public virtual BaseTableDelegate GetDelegate() {
+            return _delegate;
+        }
+
+        public override NSObject WeakDelegate {
+            get { return base.WeakDelegate; }
+            set {
+                if (_delegate != null) {
+                    _delegate.ChangeSelectedRow -= SelectedRowChanged;
+                }
+                if (value is BaseTableDelegate) {
+                    _delegate = (BaseTableDelegate)value;
+                    _delegate.ChangeSelectedRow += SelectedRowChanged;
+                }
+
+                base.WeakDelegate = value;
+            }
+        }
+
+        #endregion
+
+        #region DataSource
+
+        private BaseTableDataSource _dataSource;
+        public virtual BaseTableDataSource GetDataSource(){
+            return _dataSource;
+        }
+
+        public override NSObject WeakDataSource {
+            get { return base.WeakDataSource; }
+            set { 
+                if(value is BaseTableDataSource){
+                    _dataSource = (BaseTableDataSource)value;
+                }
+
+                base.WeakDataSource = value; 
+            }
+        }
+
+        #endregion
 
         public override void KeyDown(NSEvent theEvent) {
             base.KeyDown(theEvent);
@@ -53,6 +79,11 @@ namespace MacArchitecture.UiElements.Table.Ordinary {
 
             if (columnIndex >= 0)
                 ScrollColumnToVisible(columnIndex);
+        }
+
+
+        public virtual void SelectedRowChanged(object sender, EventArgs e){
+            SelectedRowIsChanged?.Invoke(sender,e);
         }
     }
 }

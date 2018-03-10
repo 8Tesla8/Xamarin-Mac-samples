@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using MacArchitecture.UiElements.Table.TableItem.Cell;
 
 namespace MacArchitecture.UiElements.Table.TableRow {

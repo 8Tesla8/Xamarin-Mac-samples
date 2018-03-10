@@ -72,12 +72,8 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="UiElements\" />
-    <Folder Include="UiElements\Controller\" />
-    <Folder Include="UiElements\Controller\View\" />
-    <Folder Include="UiElements\Controller\Window\" />
     <Folder Include="UiElements\Utils\" />
     <Folder Include="UiElements\Button\" />
-    <Folder Include="UiElements\Menu\" />
     <Folder Include="UiElements\Table\" />
     <Folder Include="UiElements\Table\Ordinary\" />
     <Folder Include="UiElements\TextField\" />
@@ -101,6 +97,7 @@
     <Folder Include="UiElements\Table\TableItem\" />
     <Folder Include="UiElements\Table\TableItem\Cell\" />
     <Folder Include="Autofac\" />
+    <Folder Include="UiElements\Menu\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -110,13 +107,11 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="UiElements\Controller\View\BaseViewController.cs" />
     <Compile Include="UiElements\BaseAppDelegate.cs" />
     <Compile Include="UiElements\Utils\CopyPasteHelper.cs" />
     <Compile Include="UiElements\Utils\KeyDefinder.cs" />
     <Compile Include="UiElements\Button\BaseButton.cs" />
     <Compile Include="UiElements\Table\Tree\BaseTreeTable.cs" />
-    <Compile Include="UiElements\Menu\BaseMenu.cs" />
     <Compile Include="UiElements\Button\DefaultButton.cs" />
     <Compile Include="UiElements\Button\LinkButton.cs" />
     <Compile Include="UiElements\TextField\TextFieldDelegate.cs" />
@@ -124,13 +119,11 @@
     <Compile Include="UiElements\TextView\Delegate\UndoTextDelegate.cs" />
     <Compile Include="UiElements\TextView\HtmlTextView.cs" />
     <Compile Include="UiElements\Toolbar\BaseToolbarItem.cs" />
-    <Compile Include="UiElements\Menu\LocalizeMenuItem.cs" />
     <Compile Include="UiElements\Button\StateButton.cs" />
     <Compile Include="UiElements\Toolbar\StateToolbarItem.cs" />
     <Compile Include="UiElements\Utils\DockTileIndicator.cs" />
     <Compile Include="UiElements\Button\CancelButton.cs" />
     <Compile Include="UiElements\TextView\EditableTextView.cs" />
-    <Compile Include="UiElements\Controller\Window\BaseWindowController.cs" />
     <Compile Include="UiElements\Table\Tree\TreeTableElements\BaseTreeTableDelegate.cs" />
     <Compile Include="UiElements\Table\Tree\TreeTableElements\BaseTreeTableDataSource.cs" />
     <Compile Include="UiElements\Table\Tree\TreeTableElements\SimpleTreeTableDataSource.cs" />
@@ -204,6 +197,7 @@
     <Compile Include="Autofac\Injection.cs" />
     <Compile Include="UiElements\Table\TableItem\ITreeTableRow.cs" />
     <Compile Include="Utils\ClipboardMaster.cs" />
+    <Compile Include="UiElements\Menu\MenuDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

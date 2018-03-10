@@ -9,6 +9,8 @@ using System.Linq;
 using MacArchitecture.UiElements.Table.ViewFactory;
 using MacArchitecture.UiElements.Window;
 using MacArchitecture.Utils;
+using MacArchitecture.UiElements.Table.Ordinary;
+using MacArchitecture.UiElements.Utils;
 
 namespace MacArchitecture {
     public partial class OrdinaryTableViewController : NSViewController {
@@ -124,6 +126,19 @@ namespace MacArchitecture {
                 tbl.ReloadData(rowIndexSet, columnIndexSet);
             };
 
+
+            //ordinary table
+            var ordinaryTbl = (BaseOrdinaryTable)tbl;
+            ordinaryTbl.SelectedRowIsChanged += (sender, e) => 
+                Console.WriteLine("Selected row is changed");   
+
+            ordinaryTbl.WasKeyDown += (sender, e) => {
+                var theEvent = (NSEvent)sender;
+                Console.WriteLine("key code of pressed key: " + theEvent.KeyCode);
+
+                if(KeyDefinder.SpaceKey(theEvent))
+                    Console.WriteLine("Space key was pressed");
+            };
         }
 
         #region CreateData
