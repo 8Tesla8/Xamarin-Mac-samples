@@ -11,7 +11,7 @@ namespace MacArchitecture.UiElements.Table.Ordinary {
 
         public event EventHandler WasKeyDown;
 
-        //public event EventHandler SelectedRowIsChanged;
+        //public event EventHandler SelectedRowIsChanged; - when use basetable delegate
         //public override NSObject WeakDelegate {
         //    get { return base.WeakDelegate; }
         //    set {

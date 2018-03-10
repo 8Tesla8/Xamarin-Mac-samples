@@ -18,48 +18,41 @@ namespace MacArchitecture {
         private AlertWindow _alertWindow = new AlertWindow();
         private ClipboardMaster _clipboard = new ClipboardMaster();
 
-        private string _cellValue = string.Empty; 
+        private string _cellValue = string.Empty;
 
         public override void ViewDidLoad() {
             base.ViewDidLoad();
-
-
-            //update selected 1 column cells
-            //update deffernt cells
-            //update selected row
-
 
             InitTableCell();
 
             InitTable();
 
-            //create 2 table 
-            //simple - all with texfields
-            //create update selected column and row
-            //create copy cell and copy row
-            //create table with methods "copy:" and "copyRow:"
-
             btn_copyCell.Title = "Copy clicked cell value";
-            btn_copyRow.Title = "Copy selected row value";
+            btn_copyRow.Title = "Copy selected row";
 
+            btn_updateRow.Title = "Update row";
+            btn_updateColumn.Title = "Update column";
+
+            tf_row.PlaceholderString = "RowIndex";
+            tf_column.PlaceholderString = "C0";
 
             tbl.Activated += (sender, e) => {
                 var ds = (TableDataSource)tbl.DataSource;
 
                 var tableRow = ds.Data[(int)tbl.ClickedRow];
-                var clickedColumn = tbl.TableColumns().ToList()[(int)tbl.ClickedColumn];
+                var clickedColumn = tbl.TableColumns()[(int)tbl.ClickedColumn];
 
                 var cellValue = tableRow.GetValue(clickedColumn.Identifier).Text;
                 _cellValue = cellValue;
             };
 
-            btn_copyCell.Activated += (sender, e) => 
-                _clipboard.CopyString(_cellValue);
+            btn_copyCell.Activated += (sender, e) =>
+              _clipboard.CopyString(_cellValue);
 
             btn_copyRow.Activated += (sender, e) => {
                 if (tbl.SelectedRow == -1)
                     return;
-                
+
                 var ds = (TableDataSource)tbl.DataSource;
                 var tableRow = ds.Data[(int)tbl.SelectedRow];
 
@@ -73,6 +66,64 @@ namespace MacArchitecture {
 
                 _clipboard.CopyString(rowValue);
             };
+
+
+            btn_updateRow.Activated += (sender, e) => {
+                if (int.TryParse(tf_row.StringValue, out int rowIndex)) {
+                    var ds = (TableDataSource)tbl.DataSource;
+
+                    if (ds.Data.Count > rowIndex &&
+                        rowIndex >= 0) {
+                        var tableRow = (SimpleTableRow)ds.Data[rowIndex];
+
+                        var rand = new Random();
+                        var min = 0;
+                        var max = 900;
+
+                        foreach (var column in tbl.TableColumns()) 
+                            tableRow.DataCell[column.Identifier] =
+                                nameof(SimpleTableRow) + " " + rand.Next(min, max);
+
+                        var rowIndexSet = new NSIndexSet(rowIndex);
+
+                        var columnIndexSet = new NSMutableIndexSet();
+                        for (int i = 0; i < tbl.TableColumns().Length; i++) 
+                            columnIndexSet.Add(new NSIndexSet(i));
+
+                        tbl.ReloadData(rowIndexSet, columnIndexSet);
+                    }
+                }
+            };
+
+            btn_updateColumn.Activated += (sender, e) => {
+                var foundColumnIndex = tbl.FindColumn((NSString)tf_column.StringValue);
+
+                if (foundColumnIndex < 0)
+                    return;
+
+                var column = tbl.TableColumns()[foundColumnIndex];
+
+                var ds = (TableDataSource)tbl.DataSource;
+
+                var rand = new Random();
+                var min = 0;
+                var max = 900;
+
+                foreach (var row in ds.Data) {
+                    var tableRow = (SimpleTableRow)row;
+                    tableRow.DataCell[column.Identifier] =
+                                nameof(SimpleTableRow) + " " + rand.Next(min, max);
+                }
+
+                var columnIndexSet = new NSIndexSet(foundColumnIndex);
+
+                var rowIndexSet = new NSMutableIndexSet();
+                for (int i = 0; i < ds.Data.Count; i++)
+                    rowIndexSet.Add(new NSIndexSet(i));
+
+                tbl.ReloadData(rowIndexSet, columnIndexSet);
+            };
+
         }
 
         #region CreateData
@@ -211,8 +262,6 @@ namespace MacArchitecture {
 
             return list;
         }
-
-
 
         #endregion
 

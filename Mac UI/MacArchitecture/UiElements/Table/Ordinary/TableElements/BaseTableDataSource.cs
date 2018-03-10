@@ -51,20 +51,7 @@ namespace MacArchitecture.UiElements.Table.Ordinary.TableElements {
 
 
         public override void AddRow(ITableRow tableRow) {
-            var row = Data.Count;
             Data.Add(tableRow);
-            //for one row
-            var columns = new NSIndexSet(row);
-            var columnRange = NSIndexSet.FromNSRange(
-                new NSRange(0,_table.TableColumns().Length) );
-            var mutable = new NSMutableIndexSet();
-            mutable.Add(new NSIndexSet(2));
-            mutable.Add(new NSIndexSet(3));
-            //todo tst 
-            //todo impr
-            //is it work well?
-            _table.ReloadData(new NSIndexSet(row), 
-                              columnRange);
         }
 
         public override nint GetRowCount(NSTableView tableView) {

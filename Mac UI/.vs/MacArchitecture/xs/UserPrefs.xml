@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{A1AB6338-5D24-432A-906F-8D2A16964DED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MacArchitecture/Utils/ClipboardMaster.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MacArchitecture/Controllers/View/OrdinaryTableViewController.cs">
     <Files>
       <File FileName="MacArchitecture/Controllers/View/TreeTableViewController.cs" Line="18" Column="44" />
       <File FileName="MacArchitecture/UiElements/Table/Tree/TreeTableElements/BaseTreeTableDelegate.cs" Line="87" Column="54" />
@@ -7,12 +7,9 @@
       <File FileName="MacArchitecture/UiElements/Table/Tree/TreeTableItems/ITreeTableItem.cs" Line="12" Column="7" />
       <File FileName="MacArchitecture/UiElements/Table/TableItem/ITreeTableRow.cs" Line="18" Column="1" />
       <File FileName="MacArchitecture/UiElements/Table/ViewFactory/ViewFactory.cs" Line="94" Column="1" />
-      <File FileName="MacArchitecture/Controllers/View/OrdinaryTableViewController.cs" Line="57" Column="17" NotebookId="1" />
-      <File FileName="MacArchitecture/UiElements/Table/TableItem/ITableRow.cs" Line="18" Column="39" NotebookId="1" />
-      <File FileName="MacArchitecture/UiElements/Table/Ordinary/TableElements/BaseTableDelegate.cs" Line="27" Column="44" NotebookId="1" />
-      <File FileName="MacArchitecture/UiElements/Table/Ordinary/TableElements/BaseTableDataSource.cs" Line="64" Column="24" NotebookId="1" />
-      <File FileName="MacArchitecture/UiElements/Table/Ordinary/BaseOrdinaryTable.cs" Line="14" Column="4" NotebookId="1" />
-      <File FileName="MacArchitecture/Utils/ClipboardMaster.cs" Line="8" Column="1" NotebookId="1" />
+      <File FileName="MacArchitecture/Controllers/View/OrdinaryTableViewController.cs" Line="31" Column="51" NotebookId="1" />
+      <File FileName="MacArchitecture/UiElements/Table/TableItem/ITableRow.cs" Line="71" Column="51" NotebookId="1" />
+      <File FileName="MacArchitecture/UiElements/Table/Ordinary/BaseOrdinaryTable.cs" Line="14" Column="88" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MacArchitecture PreferredExecutionTarget="Test1" />
