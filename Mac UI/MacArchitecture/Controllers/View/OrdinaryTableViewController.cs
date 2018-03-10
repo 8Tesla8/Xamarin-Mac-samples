@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MacArchitecture.UiElements.Table.ViewFactory;
 using MacArchitecture.UiElements.Window;
+using MacArchitecture.Utils;
 
 namespace MacArchitecture {
     public partial class OrdinaryTableViewController : NSViewController {
@@ -15,7 +16,9 @@ namespace MacArchitecture {
         }
 
         private AlertWindow _alertWindow = new AlertWindow();
+        private ClipboardMaster _clipboard = new ClipboardMaster();
 
+        private string _cellValue = string.Empty; 
 
         public override void ViewDidLoad() {
             base.ViewDidLoad();
@@ -24,9 +27,6 @@ namespace MacArchitecture {
             //update selected 1 column cells
             //update deffernt cells
             //update selected row
-
-            //create base delegate with IViewFactory
-            //create base data source with dynamic
 
 
             InitTableCell();
@@ -39,7 +39,40 @@ namespace MacArchitecture {
             //create copy cell and copy row
             //create table with methods "copy:" and "copyRow:"
 
-            //dynamic data - DynamicTableRow
+            btn_copyCell.Title = "Copy clicked cell value";
+            btn_copyRow.Title = "Copy selected row value";
+
+
+            tbl.Activated += (sender, e) => {
+                var ds = (TableDataSource)tbl.DataSource;
+
+                var tableRow = ds.Data[(int)tbl.ClickedRow];
+                var clickedColumn = tbl.TableColumns().ToList()[(int)tbl.ClickedColumn];
+
+                var cellValue = tableRow.GetValue(clickedColumn.Identifier).Text;
+                _cellValue = cellValue;
+            };
+
+            btn_copyCell.Activated += (sender, e) => 
+                _clipboard.CopyString(_cellValue);
+
+            btn_copyRow.Activated += (sender, e) => {
+                if (tbl.SelectedRow == -1)
+                    return;
+                
+                var ds = (TableDataSource)tbl.DataSource;
+                var tableRow = ds.Data[(int)tbl.SelectedRow];
+
+                var rowValue = string.Empty;
+                foreach (var column in tbl.TableColumns()) {
+                    if (!string.IsNullOrEmpty(rowValue))
+                        rowValue += "\t";
+
+                    rowValue += tableRow.GetValue(column.Identifier).Text;
+                }
+
+                _clipboard.CopyString(rowValue);
+            };
         }
 
         #region CreateData
@@ -139,7 +172,7 @@ namespace MacArchitecture {
                             btnP.Activated = () => {
                                 _alertWindow.ShowAlert(
                                       nameof(CheckboxCell),
-                                      "You activeted checkbox. Selected title: " + 
+                                      "You activeted checkbox. Selected title: " +
                                       btnP.MenuTitles[btnP.IndexOfSelectedItem],
                                       "OK");
                             };
@@ -158,7 +191,7 @@ namespace MacArchitecture {
         }
 
 
-        private List<ITableRow> CreateSimpleData(string[] columnIdentifier, int countRows){
+        private List<ITableRow> CreateSimpleData(string[] columnIdentifier, int countRows) {
 
             var rand = new Random();
             var min = 0;
@@ -167,10 +200,10 @@ namespace MacArchitecture {
             var list = new List<ITableRow>();
             for (int i = 0; i < countRows; i++) {
                 var tr = new SimpleTableRow();
- 
-                foreach (var identifier in columnIdentifier) { 
-                    tr.DataCell.Add(identifier, 
-                                    nameof(SimpleTableRow) + " " + rand.Next(min, max) );
+
+                foreach (var identifier in columnIdentifier) {
+                    tr.DataCell.Add(identifier,
+                                    nameof(SimpleTableRow) + " " + rand.Next(min, max));
                 }
 
                 list.Add(tr);
@@ -180,23 +213,6 @@ namespace MacArchitecture {
         }
 
 
-        private List<ITableRow> CreateDynamicData(string[] columnIdentifier, int countRows){
-            //todo impl
-            var rand = new Random();
-            var min = 0;
-            var max = 900;
-
-            var list = new List<ITableRow>();
-            for (int i = 0; i < countRows; i++) {
-                foreach (var identifier in columnIdentifier) {
-                
-
-                    //init cell - int, string, double 
-                }
-            }
-
-            return list;
-        }
 
         #endregion
 
@@ -221,7 +237,7 @@ namespace MacArchitecture {
         }
 
 
-        private void InitTable(){
+        private void InitTable() {
             var ds = new TableDataSource(tbl);
             var dlg = new BaseTableDelegate(ds);
 
@@ -232,8 +248,7 @@ namespace MacArchitecture {
             InitTableColumns(tblColumnIdentifier, tbl);
 
             var data = new List<ITableRow>();
-            data.AddRange(CreateSimpleData(tblColumnIdentifier, 3));
-            data.AddRange(CreateDynamicData(tblColumnIdentifier, 3));
+            data.AddRange(CreateSimpleData(tblColumnIdentifier, 5));
 
             ds.Data.AddRange(data);
             tbl.ReloadData();

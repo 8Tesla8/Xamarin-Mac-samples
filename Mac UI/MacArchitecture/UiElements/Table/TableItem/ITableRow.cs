@@ -80,50 +80,6 @@ namespace MacArchitecture.UiElements.Table.TableRow {
                     DataCell[columnIdentifier]);
         }
     }
-
-
-    //todo impl
-    public class DynamicTableRow : ITableRow{
-       
-        public DynamicTableRow() {
-            RowHeight = 16f;
-
-            GroupItem = false;
-            Selectable = true;
-
-            _cell = new TextFieldCell();
-
-            DataCell = new ExpandoObject();
-            Proxy = (IDictionary<string, object>)DataCell;
-        }
-
-        private TextFieldCell _cell;
-
-        public int Id { get; set; }
-        public string Identifier { get; set; }
-        public nfloat RowHeight { get; set; }
-        public bool GroupItem { get; set; }
-        public bool Selectable { get; set; }
-
-        public dynamic DataCell { get; }
-        public IDictionary<string, object> Proxy { get; }
-
-
-        public ICell GetCell(string columnIdentifier) {
-            return _cell;
-        }
-
-        public (string Text, string Tooltip) GetValue(string columnIdentifier) {
-            var cellValue = Proxy[columnIdentifier];
-
-            if(cellValue == null)
-                return (string.Empty, string.Empty);
-            else
-                return (DataCell[columnIdentifier],
-                 DataCell[columnIdentifier]);
-        }
-    }
-
 }
 
 

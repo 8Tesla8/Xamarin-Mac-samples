@@ -752,19 +752,8 @@
                                     <segue destination="epJ-Dg-toq" kind="show" id="pzA-KN-bkg"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rJq-zV-fY5">
-                                <rect key="frame" x="14" y="127" width="120" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="TreeTable" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="P7p-cu-sam">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="N2y-2w-TTs" kind="show" id="FE3-8n-zaK"/>
-                                </connections>
-                            </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1CA-qb-7R1">
-                                <rect key="frame" x="14" y="80" width="120" height="32"/>
+                                <rect key="frame" x="14" y="124" width="120" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="OrdinaryTable" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2op-t1-BlJ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -772,6 +761,17 @@
                                 </buttonCell>
                                 <connections>
                                     <segue destination="U0F-Wx-S6Q" kind="show" id="ugj-e6-rEc"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rJq-zV-fY5">
+                                <rect key="frame" x="134" y="124" width="120" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="TreeTable" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="P7p-cu-sam">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="N2y-2w-TTs" kind="show" id="FE3-8n-zaK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1973,7 +1973,7 @@
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Lx-1b-n8q">
                                 <rect key="frame" x="18" y="261" width="777" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="This table use simple table item and dynamic table item" id="VtI-7X-jgO">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="This table use simple table  item" id="VtI-7X-jgO">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1986,37 +1986,96 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mEb-gu-dXm">
+                                <rect key="frame" x="104" y="19" width="70" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="ke1-jM-Pm5"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="dqN-Ow-t2y">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ofw-NG-gAk">
+                                <rect key="frame" x="198" y="13" width="81" height="32"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RSY-YK-yx2">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ueR-fq-Hri">
+                                <rect key="frame" x="382" y="13" width="81" height="32"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bv3-na-CL4">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wd2-fi-1Y0">
+                                <rect key="frame" x="466" y="13" width="81" height="32"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="q0m-6V-CIe">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6za-Bg-QXM">
+                                <rect key="frame" x="288" y="19" width="70" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="yst-b8-d9T"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="P5U-JN-4gn">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="tbl-nS-gB2" secondAttribute="bottom" constant="20" id="1oE-0H-DRx"/>
                             <constraint firstItem="ela-wS-QNp" firstAttribute="leading" secondItem="CUl-1p-XsW" secondAttribute="leading" id="CMA-9n-NQE"/>
                             <constraint firstItem="ewU-bq-n2F" firstAttribute="trailing" secondItem="ela-wS-QNp" secondAttribute="trailing" id="K7R-Pb-Awg"/>
                             <constraint firstItem="ewU-bq-n2F" firstAttribute="leading" secondItem="ela-wS-QNp" secondAttribute="leading" id="KLZ-Sb-FKA"/>
+                            <constraint firstItem="ofw-NG-gAk" firstAttribute="centerY" secondItem="tbl-nS-gB2" secondAttribute="centerY" id="Kvw-ns-dkd"/>
                             <constraint firstItem="K2a-wb-Zdk" firstAttribute="top" secondItem="ela-wS-QNp" secondAttribute="bottom" constant="10" id="LRY-Me-7BM"/>
+                            <constraint firstItem="6za-Bg-QXM" firstAttribute="centerY" secondItem="tbl-nS-gB2" secondAttribute="centerY" id="Lzg-j9-zSc"/>
                             <constraint firstItem="1Lx-1b-n8q" firstAttribute="top" secondItem="K2a-wb-Zdk" secondAttribute="bottom" constant="10" id="P79-FG-y82"/>
+                            <constraint firstItem="ofw-NG-gAk" firstAttribute="leading" secondItem="mEb-gu-dXm" secondAttribute="trailing" constant="30" id="RBf-8w-rqJ"/>
                             <constraint firstItem="ela-wS-QNp" firstAttribute="leading" secondItem="FdI-Wx-ZBr" secondAttribute="leading" constant="20" id="SGm-fm-8dv"/>
                             <constraint firstItem="tbl-nS-gB2" firstAttribute="top" secondItem="ewU-bq-n2F" secondAttribute="bottom" constant="10" id="T9d-b4-KJn"/>
                             <constraint firstItem="K2a-wb-Zdk" firstAttribute="centerY" secondItem="FdI-Wx-ZBr" secondAttribute="centerY" id="TlH-Dw-A8i"/>
                             <constraint firstItem="ewU-bq-n2F" firstAttribute="top" secondItem="1Lx-1b-n8q" secondAttribute="bottom" constant="10" id="VIF-oR-UhH"/>
+                            <constraint firstItem="ueR-fq-Hri" firstAttribute="leading" secondItem="6za-Bg-QXM" secondAttribute="trailing" constant="30" id="Y68-xJ-sCN"/>
                             <constraint firstItem="K2a-wb-Zdk" firstAttribute="trailing" secondItem="ela-wS-QNp" secondAttribute="trailing" id="YEN-TM-tIT"/>
+                            <constraint firstItem="wd2-fi-1Y0" firstAttribute="leading" secondItem="ueR-fq-Hri" secondAttribute="trailing" constant="15" id="YcR-b0-wCu"/>
                             <constraint firstItem="K2a-wb-Zdk" firstAttribute="leading" secondItem="ela-wS-QNp" secondAttribute="leading" id="aP8-13-AcQ"/>
+                            <constraint firstItem="6za-Bg-QXM" firstAttribute="leading" secondItem="ofw-NG-gAk" secondAttribute="trailing" constant="15" id="aXg-iY-DPn"/>
+                            <constraint firstItem="mEb-gu-dXm" firstAttribute="leading" secondItem="tbl-nS-gB2" secondAttribute="trailing" constant="15" id="atv-Gv-x7P"/>
                             <constraint firstItem="1Lx-1b-n8q" firstAttribute="trailing" secondItem="K2a-wb-Zdk" secondAttribute="trailing" id="eQ5-Eb-cB7"/>
                             <constraint firstItem="CUl-1p-XsW" firstAttribute="top" secondItem="FdI-Wx-ZBr" secondAttribute="top" constant="20" id="fXL-4R-cwe"/>
                             <constraint firstItem="tbl-nS-gB2" firstAttribute="leading" secondItem="ewU-bq-n2F" secondAttribute="leading" id="faA-kM-jkS"/>
+                            <constraint firstItem="wd2-fi-1Y0" firstAttribute="centerY" secondItem="tbl-nS-gB2" secondAttribute="centerY" id="hVB-65-3oo"/>
+                            <constraint firstItem="mEb-gu-dXm" firstAttribute="centerY" secondItem="tbl-nS-gB2" secondAttribute="centerY" id="j4O-Ge-aJ6"/>
                             <constraint firstItem="1Lx-1b-n8q" firstAttribute="leading" secondItem="K2a-wb-Zdk" secondAttribute="leading" id="of1-WG-1Jy"/>
                             <constraint firstAttribute="trailing" secondItem="ela-wS-QNp" secondAttribute="trailing" constant="20" id="pFQ-jt-ZqP"/>
+                            <constraint firstItem="ueR-fq-Hri" firstAttribute="centerY" secondItem="tbl-nS-gB2" secondAttribute="centerY" id="qYA-p7-faj"/>
                             <constraint firstItem="ela-wS-QNp" firstAttribute="trailing" secondItem="CUl-1p-XsW" secondAttribute="trailing" id="w3E-wa-rYn"/>
                             <constraint firstItem="ela-wS-QNp" firstAttribute="top" secondItem="CUl-1p-XsW" secondAttribute="bottom" constant="10" id="xPS-Fc-NFB"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btn_copyCell" destination="ueR-fq-Hri" id="WAp-ya-108"/>
+                        <outlet property="btn_copyRow" destination="wd2-fi-1Y0" id="mX5-2D-6ea"/>
+                        <outlet property="btn_updateColumn" destination="ofw-NG-gAk" id="1iY-ep-ioQ"/>
+                        <outlet property="btn_updateRow" destination="tbl-nS-gB2" id="3CP-Tz-h5S"/>
                         <outlet property="tbl" destination="nnF-qT-X1o" id="eAL-S7-QFH"/>
                         <outlet property="tbl_cells" destination="3TZ-IW-hAf" id="GF6-pK-lKf"/>
+                        <outlet property="tf_column" destination="6za-Bg-QXM" id="Gzb-u0-jbP"/>
+                        <outlet property="tf_row" destination="mEb-gu-dXm" id="40S-PK-o9Z"/>
                     </connections>
                 </viewController>
                 <customObject id="zYz-pi-ddl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14.5" y="2863.5"/>
+            <point key="canvasLocation" x="13" y="2864"/>
         </scene>
         <!--Tree Table View Controller-->
         <scene sceneID="GTs-6t-mqH">
