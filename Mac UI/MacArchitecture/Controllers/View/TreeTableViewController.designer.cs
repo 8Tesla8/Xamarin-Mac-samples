@@ -12,9 +12,15 @@ namespace MacArchitecture
 	[Register ("TreeTableViewController")]
 	partial class TreeTableViewController
 	{
+		[Outlet]
+		AppKit.NSOutlineView tblT { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (tblT != null) {
+				tblT.Dispose ();
+				tblT = null;
+			}
 		}
 	}
 }

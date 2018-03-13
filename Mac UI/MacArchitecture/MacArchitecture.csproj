@@ -79,10 +79,6 @@
     <Folder Include="UiElements\TextField\" />
     <Folder Include="UiElements\TextView\" />
     <Folder Include="UiElements\TextView\Delegate\" />
-    <Folder Include="UiElements\Toolbar\" />
-    <Folder Include="UiElements\Table\Tree\TreeTableElements\" />
-    <Folder Include="UiElements\Table\Tree\TreeTableItems\" />
-    <Folder Include="UiElements\Table\Tree\TreeTableItems\ForOneColumn\" />
     <Folder Include="Controllers\" />
     <Folder Include="Controllers\View\" />
     <Folder Include="Controllers\Window\" />
@@ -98,6 +94,7 @@
     <Folder Include="UiElements\Table\TableItem\Cell\" />
     <Folder Include="Autofac\" />
     <Folder Include="UiElements\Menu\" />
+    <Folder Include="UiElements\Table\Tree\TableElements\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -107,8 +104,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="UiElements\BaseAppDelegate.cs" />
-    <Compile Include="UiElements\Utils\CopyPasteHelper.cs" />
     <Compile Include="UiElements\Utils\KeyDefinder.cs" />
     <Compile Include="UiElements\Button\BaseButton.cs" />
     <Compile Include="UiElements\Table\Tree\BaseTreeTable.cs" />
@@ -118,24 +113,11 @@
     <Compile Include="UiElements\TextView\BaseTextView.cs" />
     <Compile Include="UiElements\TextView\Delegate\UndoTextDelegate.cs" />
     <Compile Include="UiElements\TextView\HtmlTextView.cs" />
-    <Compile Include="UiElements\Toolbar\BaseToolbarItem.cs" />
     <Compile Include="UiElements\Button\StateButton.cs" />
-    <Compile Include="UiElements\Toolbar\StateToolbarItem.cs" />
     <Compile Include="UiElements\Utils\DockTileIndicator.cs" />
     <Compile Include="UiElements\Button\CancelButton.cs" />
     <Compile Include="UiElements\TextView\EditableTextView.cs" />
-    <Compile Include="UiElements\Table\Tree\TreeTableElements\BaseTreeTableDelegate.cs" />
-    <Compile Include="UiElements\Table\Tree\TreeTableElements\BaseTreeTableDataSource.cs" />
-    <Compile Include="UiElements\Table\Tree\TreeTableElements\SimpleTreeTableDataSource.cs" />
-    <Compile Include="UiElements\Table\Tree\TreeTableItems\ITreeTableItem.cs" />
-    <Compile Include="UiElements\Table\Tree\TreeTableItems\ForOneColumn\SimpleTreeTableItem.cs" />
-    <Compile Include="UiElements\Table\Tree\TreeTableItems\ForOneColumn\SimpleTextFieldTreeTableItem.cs" />
-    <Compile Include="UiElements\Table\Tree\TreeTableItems\ForOneColumn\SimpleCheckboxTreeTableItem.cs" />
-    <Compile Include="UiElements\Table\Tree\TreeTableItems\ForOneColumn\SimpleTextViewTreeTableItem.cs" />
-    <Compile Include="UiElements\Table\TableActionKeyBehavior.cs" />
     <Compile Include="UiElements\Table\Tree\CheckboxTreeTable.cs" />
-    <Compile Include="UiElements\Table\Tree\TreeTableItems\TreeTableItem.cs" />
-    <Compile Include="UiElements\Table\Tree\TreeTableItems\MultiColumnsTreeTableItem.cs" />
     <Compile Include="Controllers\View\MainViewController.cs" />
     <Compile Include="Controllers\View\MainViewController.designer.cs">
       <DependentUpon>MainViewController.cs</DependentUpon>
@@ -184,7 +166,6 @@
     <Compile Include="UiElements\Table\Ordinary\TableElements\BaseTableDataSource.cs" />
     <Compile Include="UiElements\Table\Ordinary\BaseOrdinaryTable.cs" />
     <Compile Include="UiElements\Table\ViewFactory\ViewFactory.cs" />
-    <Compile Include="UiElements\Table\Constants.cs" />
     <Compile Include="Documentation\Convention.cs" />
     <Compile Include="Documentation\Notice.cs" />
     <Compile Include="Controllers\View\OrdinaryTableViewController.cs" />
@@ -192,12 +173,14 @@
       <DependentUpon>OrdinaryTableViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="UiElements\Table\TableItem\ITableRow.cs" />
-    <Compile Include="UiElements\Table\TableItem\ICell.cs" />
     <Compile Include="UiElements\Table\TableItem\Cell\Cell.cs" />
     <Compile Include="Autofac\Injection.cs" />
     <Compile Include="UiElements\Table\TableItem\ITreeTableRow.cs" />
     <Compile Include="Utils\ClipboardMaster.cs" />
     <Compile Include="UiElements\Menu\MenuDelegate.cs" />
+    <Compile Include="UiElements\Table\Tree\TableElements\BaseTreeTableDataSource.cs" />
+    <Compile Include="UiElements\Table\TableItem\Cell\ICell.cs" />
+    <Compile Include="UiElements\Table\Tree\TableElements\BaseTreeTableDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

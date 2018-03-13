@@ -74,6 +74,7 @@ namespace MacArchitecture.UiElements.Table.TableRow {
             return _cell;
         }
 
+
         public (string Text, string Tooltip) GetValue(string columnIdentifier) {
             return (DataCell[columnIdentifier],
                     DataCell[columnIdentifier]);

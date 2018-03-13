@@ -52,6 +52,7 @@ namespace MacArchitecture.UiElements.Table.Ordinary.TableElements {
 
         public override void AddRow(ITableRow tableRow) {
             Data.Add(tableRow);
+            //impl reload row 
         }
 
         public override nint GetRowCount(NSTableView tableView) {
