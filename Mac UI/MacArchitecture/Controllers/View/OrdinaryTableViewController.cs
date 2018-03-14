@@ -35,6 +35,8 @@ namespace MacArchitecture {
             btn_updateRow.Title = "Update row";
             btn_updateColumn.Title = "Update column";
 
+            btn_addRow.Title = "Add row";
+
             tf_row.PlaceholderString = "RowIndex";
             tf_column.PlaceholderString = "C0";
 
@@ -132,7 +134,7 @@ namespace MacArchitecture {
                     tableRow.DataCell.Add(column.Identifier, column.Identifier);
     
                 var ds = (TableDataSource)tbl.DataSource;
-                ds.AddRow(tableRow);
+                ds.AddRow(tableRow); 
             };
 
             //ordinary table
@@ -265,7 +267,7 @@ namespace MacArchitecture {
         }
 
 
-        private List<ITableRow> CreateSimpleData(string[] columnIdentifier, int countRows) {
+        private List<ITableRow> CreateSimpleData(string[] columnIdentifiers, int countRows) {
 
             var rand = new Random();
             var min = 0;
@@ -275,7 +277,7 @@ namespace MacArchitecture {
             for (int i = 0; i < countRows; i++) {
                 var tr = new SimpleTableRow();
 
-                foreach (var identifier in columnIdentifier) {
+                foreach (var identifier in columnIdentifiers) {
                     tr.DataCell.Add(identifier,
                                     nameof(SimpleTableRow) + " " + rand.Next(min, max));
                 }

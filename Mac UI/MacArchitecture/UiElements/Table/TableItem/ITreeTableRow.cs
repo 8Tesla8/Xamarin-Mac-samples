@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Foundation;
 using MacArchitecture.UiElements.Table.TableItem.Cell;
 using MacArchitecture.UiElements.Table.TableRow;
@@ -37,13 +38,23 @@ namespace MacArchitecture.UiElements.Table.TableItem {
 
 
         public ICell GetCell(string columnIdentifier) {
+            if (string.IsNullOrEmpty(columnIdentifier)) 
+                return Cells.First().Value; 
+
             return Cells[columnIdentifier];
         }
 
 
         public (string Text, string Tooltip) GetValue(string columnIdentifier) {
+            if (string.IsNullOrEmpty(columnIdentifier)) {
+                var first = Cells.First();
+
+                return (Cells[first.Key].Text,
+                        Cells[first.Key].Tooltip);
+            }
+
             return (Cells[columnIdentifier].Text,
-                  Cells[columnIdentifier].Tooltip);
+                    Cells[columnIdentifier].Tooltip);
         }
 
 
@@ -99,6 +110,13 @@ namespace MacArchitecture.UiElements.Table.TableItem {
 
 
         public (string Text, string Tooltip) GetValue(string columnIdentifier) {
+            if (string.IsNullOrEmpty(columnIdentifier)) {
+                var first = DataCell.First();
+
+                return (DataCell[first.Key],
+                        DataCell[first.Key]);
+            }
+
             return (DataCell[columnIdentifier],
                     DataCell[columnIdentifier]);
         }

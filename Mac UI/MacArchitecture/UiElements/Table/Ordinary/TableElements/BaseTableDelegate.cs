@@ -24,7 +24,13 @@ namespace MacArchitecture.UiElements.Table.Ordinary.TableElements {
 
         public override NSView GetViewForItem(NSTableView tableView, NSTableColumn tableColumn, nint row) {
             var tableRow = _dataSource.GetRow((int)row);
-            var view = _viewFactory.CreateView(tableRow, tableColumn.Identifier);
+
+            NSView view = null;
+
+            if (tableRow.GroupItem)
+                view = _viewFactory.CreateView(tableRow, string.Empty);
+            else
+                view = _viewFactory.CreateView(tableRow, tableColumn.Identifier);
 
             return view;
         }

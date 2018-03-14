@@ -17,7 +17,13 @@ namespace MacArchitecture.UiElements.Table.Tree.TableElements {
 
         public override NSView GetView(NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {
             var tableRow = (ITreeTableRow)item;
-            var view = _viewFactory.CreateView(tableRow, tableColumn.Identifier);
+
+            NSView view = null;
+
+            if(tableRow.GroupItem)
+                view = _viewFactory.CreateView(tableRow, string.Empty);
+            else
+                view = _viewFactory.CreateView(tableRow, tableColumn.Identifier);
 
             return view;
         }
