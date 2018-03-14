@@ -13,6 +13,9 @@ namespace MacArchitecture
 	partial class OrdinaryTableViewController
 	{
 		[Outlet]
+		AppKit.NSButton btn_addRow { get; set; }
+
+		[Outlet]
 		AppKit.NSButton btn_copyCell { get; set; }
 
 		[Outlet]
@@ -38,21 +41,6 @@ namespace MacArchitecture
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (tbl != null) {
-				tbl.Dispose ();
-				tbl = null;
-			}
-
-			if (tbl_cells != null) {
-				tbl_cells.Dispose ();
-				tbl_cells = null;
-			}
-
-			if (btn_updateColumn != null) {
-				btn_updateColumn.Dispose ();
-				btn_updateColumn = null;
-			}
-
 			if (btn_copyCell != null) {
 				btn_copyCell.Dispose ();
 				btn_copyCell = null;
@@ -63,9 +51,24 @@ namespace MacArchitecture
 				btn_copyRow = null;
 			}
 
-			if (tf_row != null) {
-				tf_row.Dispose ();
-				tf_row = null;
+			if (btn_updateColumn != null) {
+				btn_updateColumn.Dispose ();
+				btn_updateColumn = null;
+			}
+
+			if (btn_updateRow != null) {
+				btn_updateRow.Dispose ();
+				btn_updateRow = null;
+			}
+
+			if (tbl != null) {
+				tbl.Dispose ();
+				tbl = null;
+			}
+
+			if (tbl_cells != null) {
+				tbl_cells.Dispose ();
+				tbl_cells = null;
 			}
 
 			if (tf_column != null) {
@@ -73,9 +76,14 @@ namespace MacArchitecture
 				tf_column = null;
 			}
 
-			if (btn_updateRow != null) {
-				btn_updateRow.Dispose ();
-				btn_updateRow = null;
+			if (tf_row != null) {
+				tf_row.Dispose ();
+				tf_row = null;
+			}
+
+			if (btn_addRow != null) {
+				btn_addRow.Dispose ();
+				btn_addRow = null;
 			}
 		}
 	}

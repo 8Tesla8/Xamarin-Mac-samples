@@ -752,9 +752,8 @@
                                     <segue destination="epJ-Dg-toq" kind="show" id="pzA-KN-bkg"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1CA-qb-7R1">
-                                <rect key="frame" x="14" y="124" width="120" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1CA-qb-7R1">
+                                <rect key="frame" x="14" y="140" width="112" height="32"/>
                                 <buttonCell key="cell" type="push" title="OrdinaryTable" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2op-t1-BlJ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -763,9 +762,8 @@
                                     <segue destination="U0F-Wx-S6Q" kind="show" id="ugj-e6-rEc"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rJq-zV-fY5">
-                                <rect key="frame" x="134" y="124" width="120" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rJq-zV-fY5">
+                                <rect key="frame" x="134" y="140" width="112" height="32"/>
                                 <buttonCell key="cell" type="push" title="TreeTable" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="P7p-cu-sam">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -779,10 +777,14 @@
                             <constraint firstItem="hMU-JO-FTU" firstAttribute="centerY" secondItem="53S-Or-vaJ" secondAttribute="centerY" id="2Iz-iL-qx1"/>
                             <constraint firstItem="L2y-Hl-2da" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="9Rc-Ar-ysI"/>
                             <constraint firstItem="JWP-Tg-x6v" firstAttribute="leading" secondItem="L2y-Hl-2da" secondAttribute="leading" id="AA5-Er-gix"/>
+                            <constraint firstItem="rJq-zV-fY5" firstAttribute="centerY" secondItem="1CA-qb-7R1" secondAttribute="centerY" id="Ad6-M5-AQg"/>
+                            <constraint firstItem="1CA-qb-7R1" firstAttribute="trailing" secondItem="JWP-Tg-x6v" secondAttribute="trailing" id="DGV-Sd-9Kx"/>
                             <constraint firstItem="wKV-NI-QjB" firstAttribute="centerY" secondItem="JWP-Tg-x6v" secondAttribute="centerY" id="Ek4-ag-Zaa"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LC3-bB-W2E" secondAttribute="trailing" constant="20" id="FaL-QP-Dam"/>
+                            <constraint firstItem="rJq-zV-fY5" firstAttribute="leading" secondItem="wKV-NI-QjB" secondAttribute="leading" id="Ffq-bO-FAL"/>
                             <constraint firstItem="wKV-NI-QjB" firstAttribute="leading" secondItem="53S-Or-vaJ" secondAttribute="leading" id="Hly-vi-vJF"/>
                             <constraint firstItem="JWP-Tg-x6v" firstAttribute="top" secondItem="L2y-Hl-2da" secondAttribute="bottom" constant="20" id="ISh-Lm-qEc"/>
+                            <constraint firstItem="1CA-qb-7R1" firstAttribute="leading" secondItem="JWP-Tg-x6v" secondAttribute="leading" id="Ic9-KE-1up"/>
                             <constraint firstItem="53S-Or-vaJ" firstAttribute="leading" secondItem="L2y-Hl-2da" secondAttribute="trailing" constant="20" id="K9X-B1-fKe"/>
                             <constraint firstItem="wKV-NI-QjB" firstAttribute="width" secondItem="L2y-Hl-2da" secondAttribute="width" id="QCO-HI-FNm"/>
                             <constraint firstItem="hMU-JO-FTU" firstAttribute="width" secondItem="L2y-Hl-2da" secondAttribute="width" id="Rvg-uS-9GZ"/>
@@ -795,6 +797,8 @@
                             <constraint firstItem="wuu-Zt-t1f" firstAttribute="width" secondItem="L2y-Hl-2da" secondAttribute="width" id="kEl-Wv-JTF"/>
                             <constraint firstItem="wuu-Zt-t1f" firstAttribute="centerY" secondItem="JWP-Tg-x6v" secondAttribute="centerY" id="kFM-c8-YK6"/>
                             <constraint firstItem="hMU-JO-FTU" firstAttribute="leading" secondItem="53S-Or-vaJ" secondAttribute="trailing" constant="20" id="khG-Hb-7BI"/>
+                            <constraint firstItem="rJq-zV-fY5" firstAttribute="trailing" secondItem="wKV-NI-QjB" secondAttribute="trailing" id="lwp-J1-vPC"/>
+                            <constraint firstItem="1CA-qb-7R1" firstAttribute="top" secondItem="JWP-Tg-x6v" secondAttribute="bottom" constant="20" id="nL6-Cc-YMS"/>
                             <constraint firstItem="53S-Or-vaJ" firstAttribute="width" secondItem="L2y-Hl-2da" secondAttribute="width" id="ncI-WW-fx1"/>
                             <constraint firstItem="LC3-bB-W2E" firstAttribute="leading" secondItem="hMU-JO-FTU" secondAttribute="trailing" constant="20" id="np4-lg-d2t"/>
                         </constraints>
@@ -2029,9 +2033,17 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sIk-WN-knt">
+                                <rect key="frame" x="560" y="13" width="81" height="32"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SEX-XT-aQp">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="tbl-nS-gB2" secondAttribute="bottom" constant="20" id="1oE-0H-DRx"/>
+                            <constraint firstItem="sIk-WN-knt" firstAttribute="centerY" secondItem="wd2-fi-1Y0" secondAttribute="centerY" id="7dS-PC-0He"/>
                             <constraint firstItem="ela-wS-QNp" firstAttribute="leading" secondItem="CUl-1p-XsW" secondAttribute="leading" id="CMA-9n-NQE"/>
                             <constraint firstItem="ewU-bq-n2F" firstAttribute="trailing" secondItem="ela-wS-QNp" secondAttribute="trailing" id="K7R-Pb-Awg"/>
                             <constraint firstItem="ewU-bq-n2F" firstAttribute="leading" secondItem="ela-wS-QNp" secondAttribute="leading" id="KLZ-Sb-FKA"/>
@@ -2039,6 +2051,7 @@
                             <constraint firstItem="K2a-wb-Zdk" firstAttribute="top" secondItem="ela-wS-QNp" secondAttribute="bottom" constant="10" id="LRY-Me-7BM"/>
                             <constraint firstItem="6za-Bg-QXM" firstAttribute="centerY" secondItem="tbl-nS-gB2" secondAttribute="centerY" id="Lzg-j9-zSc"/>
                             <constraint firstItem="1Lx-1b-n8q" firstAttribute="top" secondItem="K2a-wb-Zdk" secondAttribute="bottom" constant="10" id="P79-FG-y82"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sIk-WN-knt" secondAttribute="trailing" constant="20" id="PYz-tK-bJK"/>
                             <constraint firstItem="ofw-NG-gAk" firstAttribute="leading" secondItem="mEb-gu-dXm" secondAttribute="trailing" constant="30" id="RBf-8w-rqJ"/>
                             <constraint firstItem="ela-wS-QNp" firstAttribute="leading" secondItem="FdI-Wx-ZBr" secondAttribute="leading" constant="20" id="SGm-fm-8dv"/>
                             <constraint firstItem="tbl-nS-gB2" firstAttribute="top" secondItem="ewU-bq-n2F" secondAttribute="bottom" constant="10" id="T9d-b4-KJn"/>
@@ -2050,6 +2063,7 @@
                             <constraint firstItem="K2a-wb-Zdk" firstAttribute="leading" secondItem="ela-wS-QNp" secondAttribute="leading" id="aP8-13-AcQ"/>
                             <constraint firstItem="6za-Bg-QXM" firstAttribute="leading" secondItem="ofw-NG-gAk" secondAttribute="trailing" constant="15" id="aXg-iY-DPn"/>
                             <constraint firstItem="mEb-gu-dXm" firstAttribute="leading" secondItem="tbl-nS-gB2" secondAttribute="trailing" constant="15" id="atv-Gv-x7P"/>
+                            <constraint firstItem="sIk-WN-knt" firstAttribute="leading" secondItem="wd2-fi-1Y0" secondAttribute="trailing" constant="25" id="eKr-eD-o4J"/>
                             <constraint firstItem="1Lx-1b-n8q" firstAttribute="trailing" secondItem="K2a-wb-Zdk" secondAttribute="trailing" id="eQ5-Eb-cB7"/>
                             <constraint firstItem="CUl-1p-XsW" firstAttribute="top" secondItem="FdI-Wx-ZBr" secondAttribute="top" constant="20" id="fXL-4R-cwe"/>
                             <constraint firstItem="tbl-nS-gB2" firstAttribute="leading" secondItem="ewU-bq-n2F" secondAttribute="leading" id="faA-kM-jkS"/>
@@ -2063,6 +2077,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btn_addRow" destination="sIk-WN-knt" id="idE-mm-fgH"/>
                         <outlet property="btn_copyCell" destination="ueR-fq-Hri" id="WAp-ya-108"/>
                         <outlet property="btn_copyRow" destination="wd2-fi-1Y0" id="mX5-2D-6ea"/>
                         <outlet property="btn_updateColumn" destination="ofw-NG-gAk" id="1iY-ep-ioQ"/>

@@ -7,12 +7,38 @@ namespace MacArchitecture.UiElements.Table.Ordinary {
 
     [Register(nameof(BaseOrdinaryTable))]
     public class BaseOrdinaryTable : NSTableView {
-        public BaseOrdinaryTable(IntPtr handle) : base(handle) {
-        }
+        public BaseOrdinaryTable(IntPtr handle) : base(handle) { }
 
         public event EventHandler WasKeyDown;
         public event EventHandler SelectedRowIsChanged;
 
+
+        public override void KeyDown(NSEvent theEvent) {
+            base.KeyDown(theEvent);
+
+            WasKeyDown?.Invoke(theEvent, EventArgs.Empty);
+        }
+
+
+        public virtual void RemoveAllColumns() {
+            foreach (var column in TableColumns()) {
+                DrawFocusRingMask(); //for 10.13 do not remove
+                RemoveColumn(column);
+            }
+        }
+
+
+        public virtual void ScrollToColumn(string columnIdentifer) {
+            var columnIndex = FindColumn((NSString)columnIdentifer);
+
+            if (columnIndex >= 0)
+                ScrollColumnToVisible(columnIndex);
+        }
+
+
+        public virtual void SelectedRowChanged(object sender, EventArgs e) {
+            SelectedRowIsChanged?.Invoke(sender, e);
+        }
 
         #region Delegate
 
@@ -59,31 +85,5 @@ namespace MacArchitecture.UiElements.Table.Ordinary {
 
         #endregion
 
-        public override void KeyDown(NSEvent theEvent) {
-            base.KeyDown(theEvent);
-
-            WasKeyDown?.Invoke(theEvent, EventArgs.Empty);
-        }
-
-
-        public virtual void RemoveAllColumns() {
-            foreach (var column in TableColumns()) {
-                DrawFocusRingMask(); //for 10.13 do not remove
-                RemoveColumn(column);
-            }
-        }
-
-
-        public virtual void ScrollToColumn(string columnIdentifer) {
-            var columnIndex = FindColumn((NSString)columnIdentifer);
-
-            if (columnIndex >= 0)
-                ScrollColumnToVisible(columnIndex);
-        }
-
-
-        public virtual void SelectedRowChanged(object sender, EventArgs e){
-            SelectedRowIsChanged?.Invoke(sender,e);
-        }
     }
 }

@@ -126,6 +126,14 @@ namespace MacArchitecture {
                 tbl.ReloadData(rowIndexSet, columnIndexSet);
             };
 
+            btn_addRow.Activated += (sender, e) => {
+                var tableRow = new SimpleTableRow();
+                foreach (var column in tbl.TableColumns()) 
+                    tableRow.DataCell.Add(column.Identifier, column.Identifier);
+    
+                var ds = (TableDataSource)tbl.DataSource;
+                ds.AddRow(tableRow);
+            };
 
             //ordinary table
             var ordinaryTbl = (BaseOrdinaryTable)tbl;
