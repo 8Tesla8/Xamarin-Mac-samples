@@ -1,0 +1,19 @@
+//show all info about app
+codesign -dv --verbose=4 /Path/To/Application.app
+
+//check signed app or no
+spctl -a -v /Path/To/Application.app
+	//Press Return.
+	//If the app is correctly signed, the output of this command is:
+	//./Application.app: accepted
+	//source=Developer ID
+
+/sign app
+codesign -s “Developer ID” /path/to/MyApp.app
+
+//Developer ID - Common Name in certificate
+https://www.digicert.com/code-signing/mac-os-codesign-tool.htm 
+https://developer.apple.com/library/content/technotes/tn2206/_index.html
+https://help.apple.com/xcode/mac/current/#/dev1cc22a95c 
+
+

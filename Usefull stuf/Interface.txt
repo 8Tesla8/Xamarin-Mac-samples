@@ -1,0 +1,12 @@
+App Architecture
+	Full-Screen Mode
+https://developer.apple.com/macos/human-interface-guidelines/overview/themes/
+
+mac hot keys 
+https://support.apple.com/en-us/HT201236
+
+
+http://iosmanual.ru
+
+http://peterlyons.com/leveling-up
+

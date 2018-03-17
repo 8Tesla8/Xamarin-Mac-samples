@@ -1,12 +1,8 @@
 ﻿<Properties StartupConfiguration="{A1AB6338-5D24-432A-906F-8D2A16964DED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MacArchitecture/Controllers/View/TreeTableViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MacArchitecture/Utils/FingerPrintService.cs">
     <Files>
-      <File FileName="MacArchitecture/Controllers/View/TreeTableViewController.cs" Line="47" Column="1" />
-      <File FileName="MacArchitecture/UiElements/Table/TableItem/ITreeTableRow.cs" Line="43" Column="13" />
-      <File FileName="MacArchitecture/UiElements/Table/Tree/TableElements/BaseTreeTableDelegate.cs" Line="11" Column="33" />
-      <File FileName="MacArchitecture/UiElements/Table/ViewFactory/IViewFactory.cs" Line="6" Column="29" />
-      <File FileName="MacArchitecture/Controllers/View/OrdinaryTableViewController.cs" Line="170" Column="18" NotebookId="1" />
-      <File FileName="MacArchitecture/UiElements/Table/ViewFactory/ViewFactory.cs" Line="11" Column="42" NotebookId="1" />
+      <File FileName="MacArchitecture/UiElements/WebView/WebDelegate.cs" Line="33" Column="24" />
+      <File FileName="MacArchitecture/Utils/FingerPrintService.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MacArchitecture PreferredExecutionTarget="Test1" />

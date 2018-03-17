@@ -95,6 +95,7 @@
     <Folder Include="Autofac\" />
     <Folder Include="UiElements\Menu\" />
     <Folder Include="UiElements\Table\Tree\TableElements\" />
+    <Folder Include="UiElements\WebView\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -181,6 +182,10 @@
     <Compile Include="UiElements\Table\Tree\TableElements\BaseTreeTableDataSource.cs" />
     <Compile Include="UiElements\Table\TableItem\Cell\ICell.cs" />
     <Compile Include="UiElements\Table\Tree\TableElements\BaseTreeTableDelegate.cs" />
+    <Compile Include="Utils\ChangeLang.cs" />
+    <Compile Include="Utils\LogHelper.cs" />
+    <Compile Include="UiElements\WebView\WebDelegate.cs" />
+    <Compile Include="Utils\FingerPrintService.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

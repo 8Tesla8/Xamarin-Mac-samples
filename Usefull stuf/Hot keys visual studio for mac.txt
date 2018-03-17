@@ -1,0 +1,12 @@
+cmd + alt + (right, left) - create new tab
+Ctrl + cmd + (right, left) - switching between tabs
+
+Ctrl + K - Delete all line after cursor
+Alt + Shift + Up - выбрать все что находится в выбранной скобке
+Alt + (Up, Down) - перенос строки
+Alt + Enter - auto fix(предложения вариантов решения проблемы от студии)
+Alt + mouse drag - block selection (выделение по нескольким строчкам)
+Ctrl + Alt + Space - suggestion after dot(варианты после точки)
+Ctrl + BackSapce - удалить слово находящиеся после курсора 
+
+Adons adding.monodevelop.com
