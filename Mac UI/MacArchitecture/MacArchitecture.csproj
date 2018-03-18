@@ -96,6 +96,9 @@
     <Folder Include="UiElements\Menu\" />
     <Folder Include="UiElements\Table\Tree\TableElements\" />
     <Folder Include="UiElements\WebView\" />
+    <Folder Include="UiElements\Box\" />
+    <Folder Include="UiElements\Window\FileWindow\" />
+    <Folder Include="Utils\Native\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -183,9 +186,21 @@
     <Compile Include="UiElements\Table\TableItem\Cell\ICell.cs" />
     <Compile Include="UiElements\Table\Tree\TableElements\BaseTreeTableDelegate.cs" />
     <Compile Include="Utils\ChangeLang.cs" />
-    <Compile Include="Utils\LogHelper.cs" />
+    <Compile Include="Utils\LogCreator.cs" />
     <Compile Include="UiElements\WebView\WebDelegate.cs" />
     <Compile Include="Utils\FingerPrintService.cs" />
+    <Compile Include="Utils\AppInfo.cs" />
+    <Compile Include="Utils\FileManager.cs" />
+    <Compile Include="UiElements\Window\WindowManager.cs" />
+    <Compile Include="UiElements\Box\Line.cs" />
+    <Compile Include="Utils\ArrayController.cs" />
+    <Compile Include="Utils\GoUrl.cs" />
+    <Compile Include="UiElements\Window\FileWindow\FileWindowResult.cs" />
+    <Compile Include="UiElements\Window\FileWindow\FileWorkerWindows.cs" />
+    <Compile Include="Utils\ConsoleParameters.cs" />
+    <Compile Include="Utils\Native\NativeArrays.cs" />
+    <Compile Include="Utils\Native\NativeData.cs" />
+    <Compile Include="Utils\Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

@@ -1,0 +1,2 @@
+http://five.agency/solving-the-binding-problem-with-swift/
+https://www.raywenderlich.com/124490/cocoa-bindings-os-x-tutorial

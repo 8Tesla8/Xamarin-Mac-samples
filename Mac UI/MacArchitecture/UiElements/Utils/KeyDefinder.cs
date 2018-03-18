@@ -2,6 +2,15 @@
 using AppKit;
 
 namespace MacArchitecture.UiElements.Utils  {
+
+    //global key down event handler
+    //NSEvent.AddLocalMonitorForEventsMatchingMask(NSEventMask.KeyDown, KeyboardEventHandler);
+    //private static NSEvent KeyboardEventHandler(NSEvent keyEvent) {
+    //    // handle key down events here
+    //    return (keyEvent);
+    //}
+
+
     internal static class KeyDefinder {
 
         #region cmd+

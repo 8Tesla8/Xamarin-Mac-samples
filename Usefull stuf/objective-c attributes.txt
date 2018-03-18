@@ -1,0 +1,2 @@
+Useful information about objective-c attributes
+https://developer.xamarin.com/guides/cross-platform/macios/binding/objective-c-libraries/

@@ -1,8 +1,15 @@
 ﻿<Properties StartupConfiguration="{A1AB6338-5D24-432A-906F-8D2A16964DED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MacArchitecture/Utils/FingerPrintService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MacArchitecture/Utils/ConsoleParameters.cs">
     <Files>
-      <File FileName="MacArchitecture/UiElements/WebView/WebDelegate.cs" Line="33" Column="24" />
-      <File FileName="MacArchitecture/Utils/FingerPrintService.cs" Line="1" Column="1" />
+      <File FileName="MacArchitecture/Utils/FingerPrintService.cs" Line="3" Column="18" />
+      <File FileName="MacArchitecture/Utils/ChangeLang.cs" Line="1" Column="1" />
+      <File FileName="MacArchitecture/Utils/Native/NativeArrays.cs" Line="1" Column="1" />
+      <File FileName="MacArchitecture/Utils/AppInfo.cs" Line="22" Column="1" />
+      <File FileName="MacArchitecture/Utils/FileManager.cs" Line="43" Column="49" />
+      <File FileName="MacArchitecture/UiElements/Window/WindowManager.cs" Line="10" Column="9" />
+      <File FileName="MacArchitecture/UiElements/Window/FileWindow/FileWindowResult.cs" Line="27" Column="9" />
+      <File FileName="MacArchitecture/UiElements/Window/FileWindow/FileWorkerWindows.cs" Line="39" Column="48" />
+      <File FileName="MacArchitecture/Utils/ConsoleParameters.cs" Line="17" Column="78" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MacArchitecture PreferredExecutionTarget="Test1" />

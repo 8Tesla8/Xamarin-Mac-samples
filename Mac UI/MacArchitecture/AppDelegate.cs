@@ -7,6 +7,7 @@ namespace MacArchitecture {
 		public AppDelegate() {
 		}
 
+
 		public override void DidFinishLaunching(NSNotification notification) {
 			// Insert code here to initialize your application
 		}
@@ -19,6 +20,16 @@ namespace MacArchitecture {
 
         public override bool ApplicationShouldTerminateAfterLastWindowClosed(NSApplication sender) {
             return true;
+        }
+
+
+        public void CloseApp() {
+            NSApplication.SharedApplication.Terminate(this);
+        }
+
+
+        public static AppDelegate GetAppDelegate() {
+            return (AppDelegate)NSApplication.SharedApplication.Delegate;
         }
 	}
 }

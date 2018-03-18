@@ -1,0 +1,10 @@
+https://stackoverflow.com/questions/19693311/associating-a-file-extension-with-my-application 
+
+in app delegate implement
+- application:openFile: (for single file drag-drop)
+or
+- application:openFiles: (multiple files drag-drop)
+
+https://stackoverflow.com/questions/12636306/how-to-register-a-custom-non-document-uti-file-type-for-osx-to-recognize-it?rq=1
+
+https://forums.xamarin.com/discussion/47399/register-my-application-to-open-a-custom-file-type-on-click
