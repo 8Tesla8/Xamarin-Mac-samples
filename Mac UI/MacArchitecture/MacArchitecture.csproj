@@ -201,6 +201,8 @@
     <Compile Include="Utils\Native\NativeArrays.cs" />
     <Compile Include="Utils\Native\NativeData.cs" />
     <Compile Include="Utils\Startup.cs" />
+    <Compile Include="Utils\OneAppInstance.cs" />
+    <Compile Include="UiElements\Table\Tree\OutlineViewHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

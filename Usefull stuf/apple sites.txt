@@ -1,0 +1,16 @@
+Apple sign 
+	https://developer.apple.com/enroll/complete/
+
+swift
+	https://swift.org/getting-started/#using-the-package-manager
+
+
+Main apple developer site
+	https://developer.apple.com/programs/how-it-works/
+
+Apple marketing guideline
+	https://developer.apple.com/app-store/marketing/guidelines/#accessories
+
+
+
+
