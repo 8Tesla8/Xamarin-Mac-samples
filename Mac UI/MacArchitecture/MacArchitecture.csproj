@@ -99,6 +99,7 @@
     <Folder Include="UiElements\Box\" />
     <Folder Include="UiElements\Window\FileWindow\" />
     <Folder Include="Utils\Native\" />
+    <Folder Include="UiElements\Tray\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -203,6 +204,11 @@
     <Compile Include="Utils\Startup.cs" />
     <Compile Include="Utils\OneAppInstance.cs" />
     <Compile Include="UiElements\Table\Tree\OutlineViewHelper.cs" />
+    <Compile Include="UiElements\Tray\Tray.cs" />
+    <Compile Include="OtherViewController.cs" />
+    <Compile Include="OtherViewController.designer.cs">
+      <DependentUpon>OtherViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
