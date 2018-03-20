@@ -7,6 +7,8 @@ namespace MacArchitecture.Utils {
         public string Hardware { get; private set; }
         public string SerialNumber { get; private set; }
         public string CurrentUser { get; private set; }
+        public string OsVersion { get; private set; }
+
 
 
         public FingerPrintService() {
@@ -14,6 +16,7 @@ namespace MacArchitecture.Utils {
             SerialNumber = GetSerialNumber();
             Hardware = GetHardware();
             CurrentUser = GetCurrentUser();
+            OsVersion = GetOsVersion();
         }
 
         #region DLL Import
@@ -26,6 +29,12 @@ namespace MacArchitecture.Utils {
         [DllImport("/System/Library/Frameworks/IOKit.framework/IOKit")]
         static extern int IOObjectRelease(uint o);
         #endregion
+
+
+        private string GetOsVersion(){
+            var osVersion = NSProcessInfo.ProcessInfo.OperatingSystemVersion;
+            return osVersion.ToString();
+        }
 
 
         private string GetSerialNumber() {
