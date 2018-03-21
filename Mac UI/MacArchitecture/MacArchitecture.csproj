@@ -211,6 +211,10 @@
     <Compile Include="Controllers\View\OtherViewController.designer.cs">
       <DependentUpon>OtherViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\View\FileWorkerWindowViewController.cs" />
+    <Compile Include="Controllers\View\FileWorkerWindowViewController.designer.cs">
+      <DependentUpon>FileWorkerWindowViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

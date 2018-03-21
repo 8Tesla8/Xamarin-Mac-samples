@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AppKit;
+using Foundation;
 
 namespace MacArchitecture.UiElements.Window.FileWindow {
     public class FileWorkerWindows {
@@ -22,7 +23,7 @@ namespace MacArchitecture.UiElements.Window.FileWindow {
             var openWindow = new NSOpenPanel();
 
             if (!string.IsNullOrEmpty(path))
-                openWindow.Directory = path;
+                openWindow.DirectoryUrl = new NSUrl(path, true);
 
             openWindow.CanChooseFiles = false;
             openWindow.CanCreateDirectories = true;
@@ -89,7 +90,7 @@ namespace MacArchitecture.UiElements.Window.FileWindow {
             saveWindow.AccessoryView = tf;
 
             if (!string.IsNullOrEmpty(path))
-                saveWindow.Directory = path;
+                saveWindow.DirectoryUrl = new NSUrl(path, true);
 
             if (saveWindow.RunModal() == Convert.ToInt32(NSModalResponse.OK))
                 return new FileWindowResult(true, saveWindow.Url.Path);

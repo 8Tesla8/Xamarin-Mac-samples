@@ -775,15 +775,7 @@
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aqg-y5-VR7">
                                 <rect key="frame" x="159" y="35" width="160" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="NSFileManger" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o1d-le-LO1">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3tu-ux-Vez">
-                                <rect key="frame" x="334" y="22" width="130" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="little windows" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Awf-Ov-zdP">
+                                <buttonCell key="cell" type="push" title="rule controller" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o1d-le-LO1">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -796,6 +788,17 @@
                                 </buttonCell>
                                 <connections>
                                     <segue destination="vxt-RT-0CC" kind="show" id="Q2A-4z-gie"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3tu-ux-Vez">
+                                <rect key="frame" x="14" y="99" width="232" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="File worker window" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Awf-Ov-zdP">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="4OL-jl-WTd" kind="show" id="fni-7J-Mvi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1398,6 +1401,54 @@
                 <customObject id="ndx-IP-dos" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2753" y="1765"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="nLr-Vh-5Pd">
+            <objects>
+                <windowController showSeguePresentationStyle="single" id="4OL-jl-WTd" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Rkc-SE-Jdg">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="310" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
+                        <connections>
+                            <outlet property="delegate" destination="4OL-jl-WTd" id="bo6-Py-Rgi"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="SmI-0t-SSc" kind="relationship" relationship="window.shadowedContentViewController" id="sc2-nF-yoQ"/>
+                    </connections>
+                </windowController>
+                <customObject id="3tu-Z7-fdS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2595" y="2253"/>
+        </scene>
+        <!--File Worker Window View Controller-->
+        <scene sceneID="SnK-gY-2WC">
+            <objects>
+                <viewController id="SmI-0t-SSc" customClass="FileWorkerWindowViewController" sceneMemberID="viewController">
+                    <view key="view" id="LTT-Sf-Ahy">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tv2-fL-eyb">
+                                <rect key="frame" x="32" y="205" width="81" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eA5-jZ-kt3">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="btn_test" destination="Tv2-fL-eyb" id="uqF-M0-RzK"/>
+                        <outlet property="btn_tst" destination="Tv2-fL-eyb" id="03g-uo-vsr"/>
+                    </connections>
+                </viewController>
+                <customObject id="IXM-7g-xH3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2595" y="2716"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="aAq-qT-8gJ">
