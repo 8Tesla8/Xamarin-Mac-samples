@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using AppKit;
 using Foundation;
 
@@ -31,7 +32,7 @@ namespace MacArchitecture.Utils {
 
         public bool OpenApp(string name) {
 
-            var path = GetPathApp(name + ".app");
+            var path = GetAppPath(name + ".app");
 
             if (!string.IsNullOrEmpty(path))
                 return NSWorkspace.SharedWorkspace.LaunchApplication(path);
@@ -40,30 +41,34 @@ namespace MacArchitecture.Utils {
         }
 
 
-        private string GetPathApp(string fullAppName) {
+        public string GetAppPath(string fullAppName) {
 
             string fullPath = NSWorkspace.SharedWorkspace.FullPathForApplication(fullAppName);
 
             if (!string.IsNullOrEmpty(fullPath) && !fullPath.StartsWith("/Volumes/"))
                 return fullPath;
 
-            return null;
+            return string.Empty;
         }
 
-        //todo tst check this method
-        public void OpenFile(string filePath){
-            NSWorkspace.SharedWorkspace.OpenFile(filePath);
-            NSWorkspace.SharedWorkspace.SelectFile(filePath, filePath);
+
+        public bool OpenFile(string filePath){
+            if(File.Exists(filePath))
+                return NSWorkspace.SharedWorkspace.SelectFile(filePath, filePath);
+                //NSWorkspace.SharedWorkspace.OpenFile(filePath);
+
+            return false;
         }
 
-        //todo tst need to check this method
+
         public void GetPath(){
             var path = NSFileManager.DefaultManager.GetUrls(NSSearchPathDirectory.ApplicationDirectory, 
                                                             NSSearchPathDomain.All);
 
             //NSTemporaryDirectory
 
-            var path1 = NSFileManager.DefaultManager.GetUrls(NSSearchPathDirectory.ApplicationDirectory, NSSearchPathDomain.User);
+            var path1 = NSFileManager.DefaultManager.GetUrls(NSSearchPathDirectory.ApplicationDirectory, 
+                                                             NSSearchPathDomain.User);
 
         }
     }

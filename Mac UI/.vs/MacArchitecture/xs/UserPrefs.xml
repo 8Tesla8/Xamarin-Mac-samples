@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{A1AB6338-5D24-432A-906F-8D2A16964DED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MacArchitecture/Utils/FileManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MacArchitecture/Controllers/View/OtherViewController.cs">
     <Files>
       <File FileName="MacArchitecture/UiElements/Window/WindowManager.cs" Line="9" Column="9" />
       <File FileName="MacArchitecture/UiElements/Window/FileWindow/FileWindowResult.cs" Line="27" Column="9" />
       <File FileName="MacArchitecture/UiElements/Window/FileWindow/FileWorkerWindows.cs" Line="21" Column="53" />
-      <File FileName="MacArchitecture/Utils/FileManager.cs" Line="43" Column="49" />
+      <File FileName="MacArchitecture/Controllers/View/OtherViewController.cs" Line="51" Column="59" />
+      <File FileName="MacArchitecture/Utils/FileManager.cs" Line="35" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MacArchitecture PreferredExecutionTarget="Test1" />

@@ -40,6 +40,18 @@ namespace MacArchitecture{
                         break;
                 }
             };
+
+            var fileManager = new FileManager();
+            tf_appName.Changed += (sender, e) => {
+                lbl_appPath.StringValue = fileManager.GetAppPath(
+                    tf_appName.StringValue + ".app");
+            };
+
+            btn_runApp.Activated += (sender, e) => {
+                fileManager.OpenApp(tf_appName.StringValue); 
+            };
+
+            fileManager.GetPath();
         }
 
 

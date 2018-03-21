@@ -13,6 +13,12 @@ namespace MacArchitecture
 	partial class OtherViewController
 	{
 		[Outlet]
+		AppKit.NSButton btn_runApp { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField lbl_appPath { get; set; }
+
+		[Outlet]
 		AppKit.NSTextField lbl_appVersion { get; set; }
 
 		[Outlet]
@@ -32,6 +38,9 @@ namespace MacArchitecture
 
 		[Outlet]
 		AppKit.NSSegmentedControl sgm { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField tf_appName { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
@@ -50,6 +59,11 @@ namespace MacArchitecture
 				lbl_currentUser = null;
 			}
 
+			if (lbl_localization != null) {
+				lbl_localization.Dispose ();
+				lbl_localization = null;
+			}
+
 			if (lbl_osVersion != null) {
 				lbl_osVersion.Dispose ();
 				lbl_osVersion = null;
@@ -60,14 +74,24 @@ namespace MacArchitecture
 				lbl_serialNumber = null;
 			}
 
-			if (lbl_localization != null) {
-				lbl_localization.Dispose ();
-				lbl_localization = null;
-			}
-
 			if (sgm != null) {
 				sgm.Dispose ();
 				sgm = null;
+			}
+
+			if (tf_appName != null) {
+				tf_appName.Dispose ();
+				tf_appName = null;
+			}
+
+			if (lbl_appPath != null) {
+				lbl_appPath.Dispose ();
+				lbl_appPath = null;
+			}
+
+			if (btn_runApp != null) {
+				btn_runApp.Dispose ();
+				btn_runApp = null;
 			}
 		}
 	}
