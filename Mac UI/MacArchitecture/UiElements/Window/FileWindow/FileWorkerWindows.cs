@@ -37,8 +37,11 @@ namespace MacArchitecture.UiElements.Window.FileWindow {
         }
 
 
-        public FileWindowResult ShowOpenFileWindow(FileType fileType, bool multiSelectOn = false) {
+        public FileWindowResult ShowOpenFileWindow(FileType fileType, string path, bool multiSelectOn = false) {
             var dialog = new NSOpenPanel();
+
+            if (!string.IsNullOrEmpty(path))
+                dialog.DirectoryUrl = new NSUrl(path, true);
 
             //dialog.Title = Title;
             dialog.ShowsResizeIndicator = true;

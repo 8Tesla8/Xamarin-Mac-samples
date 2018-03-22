@@ -13,13 +13,53 @@ namespace MacArchitecture
 	partial class FileWorkerWindowViewController
 	{
 		[Outlet]
-		AppKit.NSButton btn_test { get; set; }
+		AppKit.NSButton btn_filePathWindow { get; set; }
+
+		[Outlet]
+		AppKit.NSButton btn_openFileWindow { get; set; }
+
+		[Outlet]
+		AppKit.NSButton btn_saveFileWindow { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField lbl_filePathWindow { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField lbl_openFileWindow { get; set; }
+
+		[Outlet]
+		AppKit.NSTextField lbl_saveFileWindow { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (btn_test != null) {
-				btn_test.Dispose ();
-				btn_test = null;
+			if (btn_filePathWindow != null) {
+				btn_filePathWindow.Dispose ();
+				btn_filePathWindow = null;
+			}
+
+			if (btn_openFileWindow != null) {
+				btn_openFileWindow.Dispose ();
+				btn_openFileWindow = null;
+			}
+
+			if (btn_saveFileWindow != null) {
+				btn_saveFileWindow.Dispose ();
+				btn_saveFileWindow = null;
+			}
+
+			if (lbl_filePathWindow != null) {
+				lbl_filePathWindow.Dispose ();
+				lbl_filePathWindow = null;
+			}
+
+			if (lbl_openFileWindow != null) {
+				lbl_openFileWindow.Dispose ();
+				lbl_openFileWindow = null;
+			}
+
+			if (lbl_saveFileWindow != null) {
+				lbl_saveFileWindow.Dispose ();
+				lbl_saveFileWindow = null;
 			}
 		}
 	}
