@@ -97,6 +97,12 @@ namespace MacArchitecture {
         }
 
 
+        public override void ViewDidAppear() {
+            base.ViewDidAppear();
+
+            View.Window.Title = nameof(TextFieldViewController);
+        }
+
         private void SetField<T>(ref T field, T value, string propertyName, Action<T> callback = null) {
             if (EqualityComparer<T>.Default.Equals(field, value))
                 return;

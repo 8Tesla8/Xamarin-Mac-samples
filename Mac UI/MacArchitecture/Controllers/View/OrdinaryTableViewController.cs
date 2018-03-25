@@ -22,6 +22,13 @@ namespace MacArchitecture {
 
         private string _cellValue = string.Empty;
 
+
+        public override void ViewDidAppear() {
+            base.ViewDidAppear();
+
+            View.Window.Title = nameof(OrdinaryTableViewController);
+        }
+
         public override void ViewDidLoad() {
             base.ViewDidLoad();
 

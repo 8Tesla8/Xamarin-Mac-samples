@@ -1,7 +1,12 @@
 ﻿<Properties StartupConfiguration="{A1AB6338-5D24-432A-906F-8D2A16964DED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MacArchitecture/Controllers/View/FileWorkerWindowViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MacArchitecture/Controllers/View/TreeTableViewController.cs">
     <Files>
       <File FileName="MacArchitecture/Controllers/View/FileWorkerWindowViewController.cs" Line="20" Column="54" />
+      <File FileName="MacArchitecture/Controllers/View/TextFieldViewController.cs" Line="103" Column="63" />
+      <File FileName="MacArchitecture/Controllers/View/OrdinaryTableViewController.cs" Line="26" Column="3" />
+      <File FileName="MacArchitecture/Controllers/View/NotificationViewController.designer.cs" Line="13" Column="16" />
+      <File FileName="MacArchitecture/Controllers/View/NotificationViewController.cs" Line="15" Column="1" />
+      <File FileName="MacArchitecture/Controllers/View/TreeTableViewController.cs" Line="21" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MacArchitecture PreferredExecutionTarget="Test1" />

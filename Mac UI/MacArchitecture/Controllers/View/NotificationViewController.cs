@@ -12,6 +12,13 @@ namespace MacArchitecture {
         private NotificationCreator _creator = new NotificationCreator();
 
 
+        public override void ViewDidAppear() {
+            base.ViewDidAppear();
+
+            View.Window.Title = nameof(NotificationViewController);
+        }
+
+
         public override void ViewDidLoad() {
             base.ViewDidLoad();
 

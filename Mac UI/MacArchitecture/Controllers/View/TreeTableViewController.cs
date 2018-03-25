@@ -18,6 +18,13 @@ namespace MacArchitecture {
         private AlertWindow _alertWindow = new AlertWindow();
 
 
+        public override void ViewDidAppear() {
+            base.ViewDidAppear();
+
+            View.Window.Title = nameof(TreeTableViewController);
+        }
+
+
         public override void ViewDidLoad() {
             base.ViewDidLoad();
 
