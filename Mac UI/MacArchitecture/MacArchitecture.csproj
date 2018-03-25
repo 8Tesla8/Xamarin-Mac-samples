@@ -215,6 +215,7 @@
     <Compile Include="Controllers\View\FileWorkerWindowViewController.designer.cs">
       <DependentUpon>FileWorkerWindowViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Native\NSDateExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
