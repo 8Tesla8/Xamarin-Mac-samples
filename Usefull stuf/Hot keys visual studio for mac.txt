@@ -1,6 +1,7 @@
 cmd + alt + (right, left) - create new tab
 Ctrl + cmd + (right, left) - switching between tabs
 
+Ctrl + I - format text
 Ctrl + K - Delete all line after cursor
 Alt + Shift + Up - выбрать все что находится в выбранной скобке
 Alt + (Up, Down) - перенос строки
